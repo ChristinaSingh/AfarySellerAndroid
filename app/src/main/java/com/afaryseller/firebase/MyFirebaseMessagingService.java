@@ -23,6 +23,7 @@ import com.afaryseller.ui.home.HomeAct;
 import com.afaryseller.ui.splash.ChooseAct;
 import com.afaryseller.ui.splash.PermissionPageTwoAct;
 import com.afaryseller.ui.splash.SplashAct;
+import com.afaryseller.ui.subseller.home.SubSellerHomeAct;
 import com.afaryseller.ui.wallet.PaymentByAnotherAct;
 import com.afaryseller.utility.DataManager;
 import com.afaryseller.utility.SessionManager;
@@ -343,104 +344,108 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             Intent intent = null;
 
-            if (type.equals("Seller verification account")) {
-                if (step.equalsIgnoreCase("5"))
-                    intent = new Intent(getApplicationContext(), PermissionPageTwoAct.class).putExtra("step", "5");
-            } else if (type.equals("insert_chat")) {
-                intent = new Intent(getApplicationContext(), ChatAct.class)
-                        .putExtra("UserId", remoteMessage.getString("userid"))
-                        .putExtra("UserName", remoteMessage.getString("user_name"))
-                        .putExtra("UserImage", remoteMessage.getString("userimage"));
-            }/* else if (title.equalsIgnoreCase("Your account has been Deactive by AfaryCode Team.")) {
+
+            if (DataManager.getInstance().getUserData(getApplicationContext()).getResult().getType().equals(Constant.SUBADMIN)) {
+
+
+                if (type.equals("Seller verification account")) {
+                    if (step.equalsIgnoreCase("5"))
+                        intent = new Intent(getApplicationContext(), PermissionPageTwoAct.class).putExtra("step", "5");
+                } else if (type.equals("insert_chat")) {
+                    intent = new Intent(getApplicationContext(), ChatAct.class)
+                            .putExtra("UserId", remoteMessage.getString("userid"))
+                            .putExtra("UserName", remoteMessage.getString("user_name"))
+                            .putExtra("UserImage", remoteMessage.getString("userimage"));
+                }/* else if (title.equalsIgnoreCase("Your account has been Deactive by AfaryCode Team.")) {
                 intent = new Intent();
                 if (DataManager.getInstance().getUserData(getApplicationContext()) != null) {
                     SessionManager.logout(this);
                 }
             }*/ else if (keyEng.equalsIgnoreCase("Your account is Activated")) {
-                intent = new Intent();
-            } else if (msgEng.contains("Dear partner,Customer") || msgEng.contains("Dear Partner, You have  accepted an") || msgEng.contains("want your product")
-                    || msgEng.contains("Deleted a order order id is")) {
-                intent = new Intent(getApplicationContext(), HomeAct.class)
-                        .putExtra("status", "cancelByUser").putExtra("msg", msg);
-            }
-            //A customer wants to know the availability of the product
-            else if (msgEng.contains("A customer wants to know the availability of the product")) {
-                intent = new Intent(getApplicationContext(), HomeAct.class)
-                        .putExtra("status", "updateStock").putExtra("msg", msg)
-                        .putExtra("user_id", remoteMessage.getString("userid"))
-                        .putExtra("product_id", remoteMessage.getString("product_id"))
-                        .putExtra("product_name", remoteMessage.getString("product_name"))
-                        .putExtra("product_sku", remoteMessage.getString("product_sku"))
-                        .putExtra("product_image", remoteMessage.getString("product_image"));
-            } else if (msgEng.contains("Dear service provider")) {
-                intent = new Intent(getApplicationContext(), HomeAct.class)
-                        .putExtra("status", "ProductValidate").putExtra("msg", msg);
+                    intent = new Intent();
+                } else if (msgEng.contains("Dear partner,Customer") || msgEng.contains("Dear Partner, You have  accepted an") || msgEng.contains("want your product")
+                        || msgEng.contains("Deleted a order order id is")) {
+                    intent = new Intent(getApplicationContext(), HomeAct.class)
+                            .putExtra("status", "cancelByUser").putExtra("msg", msg);
+                }
+                //A customer wants to know the availability of the product
+                else if (msgEng.contains("A customer wants to know the availability of the product")) {
+                    intent = new Intent(getApplicationContext(), HomeAct.class)
+                            .putExtra("status", "updateStock").putExtra("msg", msg)
+                            .putExtra("user_id", remoteMessage.getString("userid"))
+                            .putExtra("product_id", remoteMessage.getString("product_id"))
+                            .putExtra("product_name", remoteMessage.getString("product_name"))
+                            .putExtra("product_sku", remoteMessage.getString("product_sku"))
+                            .putExtra("product_image", remoteMessage.getString("product_image"));
+                } else if (msgEng.contains("Dear service provider")) {
+                    intent = new Intent(getApplicationContext(), HomeAct.class)
+                            .putExtra("status", "ProductValidate").putExtra("msg", msg);
 
-            } /*else if (msg.contains("You have been logged out because you have logged in on another device")) {
+                } /*else if (msg.contains("You have been logged out because you have logged in on another device")) {
                 SessionManager.clearSession(getApplicationContext());
                 intent = new Intent(getApplicationContext(), SplashAct.class);
-            }*/
-            else if(type.equalsIgnoreCase("Statuschange")){
-                intent = new Intent(getApplicationContext(), SplashAct.class)
-                        .putExtra("title",title)
-                        .putExtra("msg",msg)
-                        .putExtra("from","notification");
-            }
+            }*/ else if (type.equalsIgnoreCase("Statuschange")) {
+                    intent = new Intent(getApplicationContext(), SplashAct.class)
+                            .putExtra("title", title)
+                            .putExtra("msg", msg)
+                            .putExtra("from", "notification");
+                } else if (type.equals("InvoiceToOtherUserForWallet")) {
+                    //  if (!remoteMessage.getString("other_user_id").equals(PreferenceConnector.readString(getApplicationContext(), PreferenceConnector.User_id, ""))) {
+                    intent = new Intent(getApplicationContext(), PaymentByAnotherAct.class)
+                            .putExtra("paymentInsertId", remoteMessage.getString("invoice_id"))
+                            .putExtra("user_id", remoteMessage.getString("userid"))
+                            .putExtra("type", "InvoiceToOtherUserForWallet");
+                    //  }
+                    //  else {
 
-            else if (type.equals("InvoiceToOtherUserForWallet")) {
-                //  if (!remoteMessage.getString("other_user_id").equals(PreferenceConnector.readString(getApplicationContext(), PreferenceConnector.User_id, ""))) {
-                intent = new Intent(getApplicationContext(), PaymentByAnotherAct.class)
-                        .putExtra("paymentInsertId", remoteMessage.getString("invoice_id"))
-                        .putExtra("user_id",remoteMessage.getString("userid"))
-                        .putExtra("type","InvoiceToOtherUserForWallet");
-                //  }
-                //  else {
+                    //  }
 
-                //  }
+                } else if (type.equals("InvoiceToOtherUser")) {
+                    //  if (!remoteMessage.getString("other_user_id").equals(PreferenceConnector.readString(getApplicationContext(), PreferenceConnector.User_id, ""))) {
+                    intent = new Intent(getApplicationContext(), PaymentByAnotherAct.class)
+                            .putExtra("paymentInsertId", remoteMessage.getString("invoice_id"))
+                            .putExtra("user_id", remoteMessage.getString("userid"))
+                            .putExtra("type", "InvoiceToOtherUser");
+                    //  }
+                    //  else {
 
-            }
+                    //  }
 
-            else if (type.equals("InvoiceToOtherUser")) {
-                //  if (!remoteMessage.getString("other_user_id").equals(PreferenceConnector.readString(getApplicationContext(), PreferenceConnector.User_id, ""))) {
-                intent = new Intent(getApplicationContext(), PaymentByAnotherAct.class)
-                        .putExtra("paymentInsertId", remoteMessage.getString("invoice_id"))
-                        .putExtra("user_id",remoteMessage.getString("userid"))
-                        .putExtra("type","InvoiceToOtherUser");
-                //  }
-                //  else {
-
-                //  }
-
-            }
-
-            else if (type.equals("InvoiceToUser")) {
-                intent = new Intent(getApplicationContext(), HomeAct.class)
-                        .putExtra("status", "cancelByUser")
-                        .putExtra("msg", "");
+                } else if (type.equals("InvoiceToUser")) {
+                    intent = new Intent(getApplicationContext(), HomeAct.class)
+                            .putExtra("status", "cancelByUser")
+                            .putExtra("msg", "");
 
 
                 /* .putExtra("status", "")
                         .putExtra("msg", "");*/
-            }
-
-            else if (type.equals("InvoiceToUserForWallet")) {
-                intent = new Intent(getApplicationContext(), HomeAct.class)
-                        .putExtra("status", "cancelByUser")
-                        .putExtra("msg", msg);
+                } else if (type.equals("InvoiceToUserForWallet")) {
+                    intent = new Intent(getApplicationContext(), HomeAct.class)
+                            .putExtra("status", "cancelByUser")
+                            .putExtra("msg", msg);
 
                /*  .putExtra("status", "")
                         .putExtra("msg", "");*/
-            }
-
-
-            else {
-                intent = new Intent(getApplicationContext(), HomeAct.class)
-                        .putExtra("status",
-                                "cancelByUser").putExtra("msg", msg);
+                } else {
+                    intent = new Intent(getApplicationContext(), HomeAct.class)
+                            .putExtra("status",
+                                    "cancelByUser").putExtra("msg", msg);
 
                  /*  .putExtra("status",
                         title).putExtra("msg", msg);*/
+                }
+
             }
+
+            else {
+                intent = new Intent(getApplicationContext(), SubSellerHomeAct.class)
+                        .putExtra("status", "cancelByUser").putExtra("msg", msg);
+            }
+
+
+
+
+
 
 
             if (messageBody != null) {

@@ -94,7 +94,7 @@ public class SubSellerHomeFragment extends BaseFragment<FragmentSubSellerHomeBin
 
         binding.rlShop.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            bundle.putString("id","");
+            bundle.putString("id","1");
             Navigation.findNavController(v).navigate(R.id.action_sub_seller_home_fragment_to_orderList,bundle);
         });
 

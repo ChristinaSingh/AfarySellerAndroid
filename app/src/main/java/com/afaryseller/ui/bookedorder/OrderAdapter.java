@@ -45,8 +45,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
             //   double taxN2 = Double.parseDouble(arrayList.get(position).getTaxN2());
             //  double platFormsFees = Double.parseDouble(arrayList.get(position).getPlatFormsFees());
             //   double deliveryFees = Double.parseDouble(arrayList.get(position).getDeliveryCharges());
+            int n1=0;
+               if (arrayList.get(position).getTotalAmount().contains(",")) n1 = parseFrenchNumber(arrayList.get(position).getTotalAmount().replace(",",""));
+               else n1 = parseFrenchNumber(arrayList.get(position).getTotalAmount());
 
-            int n1 = parseFrenchNumber(arrayList.get(position).getTotalAmount());
             int n2 = parseFrenchNumber(arrayList.get(position).getTaxN1())
                     + parseFrenchNumber(arrayList.get(position).getTaxN2())
                     + parseFrenchNumber(arrayList.get(position).getPlatFormsFees())
