@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+
+
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_IMAGES"
+        android:minSdkVersion="33" />
+
+
+
+
+
+
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AfarySeller"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.splash.SplashAct"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
+
+        <activity android:name=".ui.wallet.PaymentWebViewAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.wallet.PaymentByAnotherAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.wallet.bottomsheet.CheckPaymentStatusAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.login.ForgotPassword"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.splash.ReadAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.splash.ChooseAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.login.LoginAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.signup.SignupAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.otp.OtpAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.selectskills.SelectSkillsAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.uploadids.UploadIdsAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.splash.AskAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.splash.PermissionPageOneAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.splash.PermissionPageTwoAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.home.HomeAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.changepassword.ChangePasswordAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.splash.WebViewAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.addproduct.AddProductAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.addproduct.AddProductNewAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.shopdetails.ShopDetailsFragment"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.editprofile.EditProfileAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.editTime.EditTimeFragment"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.subscription.SubscriptionAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.editproduct.EditProductAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.viewproduct.ViewProductAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.viewproduct.ViewProduct2Act"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.notifications.NotificationAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.orderdetails.OrderDetailsAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.chat.ChatAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.orderdetails.OrderTrackAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.onlineorderhistory.onlineOrderHistoryAct"
+            android:exported="false"
+            android:configChanges="locale"
+
+            />
+
+        <activity android:name=".ui.chat.ChatListAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.membershipplan.CurrentMemberShipPlanAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.notifyadmin.NotifyAdminAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.subseller.signup.SubSellerSignupAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.subseller.subsellerlsit.SubSellerListAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.subseller.profile.SubSellerProfileAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.subseller.changepassword.SubSellerChangePasswordAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+        <activity android:name=".ui.subseller.updateprofile.UpdateSubSellerProfileAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.subseller.login.SubSellerLoginAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+        <activity android:name=".ui.subseller.home.SubSellerHomeAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.afaryseller.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"/>
+        </provider>
+
+
+
+        <service android:name=".firebase.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/logo_well1" />
+
+
+        <service
+            android:name=".utility.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/api_key_map" />
+
+
+        <meta-data
+            android:name="com.google.firebase.MESSAGING_DEFAULT_CHANNEL_ID"
+            android:value="@string/default_channel_id"/>
+
+        <service
+            android:name=".ui.wallet.bottomsheet.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="homeViewModel"
+            type="com.afaryseller.ui.home.fragment.HomeViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color">
+
+        <LinearLayout
+            android:id="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_75sdp"
+            android:background="@drawable/border_new"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_75sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true">
+
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:maxLines="1"
+                        android:text="Hello,"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/llicon"
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/imgLoc"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/location" />
+
+                        <TextView
+                            android:id="@+id/tvFullAddress"
+                            android:layout_toEndOf="@+id/imgLoc"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/imgLoc"
+                            android:maxLines="2"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/llicon"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgSearch"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:src="@drawable/search" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlNotification"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgNotification"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/notifications" />
+
+
+                        <TextView
+                            android:id="@+id/tvCounter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_8sdp"
+                            android:textColor="@color/white"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:gravity="center"
+                            android:padding="@dimen/_2sdp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/circle_red"
+                            android:visibility="gone"
+                            />
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+
+
+
+        </LinearLayout>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/RRtoolbar"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:sliderAnimationDuration="15"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="6"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorSelectedColor="@color/colorPrimary"
+            app:sliderIndicatorUnselectedColor="#5A5A5A"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
+
+        <!--
+                <LinearLayout
+                    android:id="@+id/selct_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/header_click"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/my_bookings" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_15sdp"
+                        android:text="@string/home_"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                </LinearLayout>
+        -->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/skill_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                android:visibility="visible"
+                tools:listitem="@layout/item_home_cat"
+                android:layout_marginBottom="@dimen/_60sdp"
+                />
+
+
+            <TextView
+                android:id="@+id/tvNotFount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/skills_not_available"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="@dimen/_12sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_120sdp"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>
+

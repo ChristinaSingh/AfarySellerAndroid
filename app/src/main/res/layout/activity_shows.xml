@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/header_logo"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_well1" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_logo">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_25sdp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_15sdp"
+                        android:text="@string/smile_to_serve"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_15sdp"
+                        android:text="@string/servre"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/login_border_btn">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:text="@string/ok"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</layout>

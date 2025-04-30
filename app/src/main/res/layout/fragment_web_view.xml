@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/_20sdp"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/RRtoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:background="@drawable/border_new">
+
+                <RelativeLayout
+                    android:id="@+id/ivBack"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/back_icon" />
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppinsregular"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_margin="@dimen/_10sdp"
+                >
+
+
+                <TextView
+                    android:id="@+id/btnOne"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".9"
+                    android:text="@string/terms_of_use"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/poppinsregular"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp"
+                    android:background="@drawable/blue_bg_rounded"
+                    />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".1"/>
+
+
+                <TextView
+                    android:id="@+id/btnTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/use_conditions"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/poppinsregular"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp"
+                    android:background="@drawable/blue_bg_rounded"
+                    />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".1"/>
+
+
+                <TextView
+                    android:id="@+id/btnThree"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".9"
+                    android:text="@string/privacy_policy"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/poppinsregular"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp"
+                    android:background="@drawable/blue_bg_rounded"
+
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/btnOk"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@color/purple_200"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/ok"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp" />
+
+                </RelativeLayout>
+
+
+
+            </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</layout>

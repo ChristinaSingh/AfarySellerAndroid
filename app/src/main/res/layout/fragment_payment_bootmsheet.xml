@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:swagpoints="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/rlPayment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/RRtoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:background="@drawable/border_new">
+
+                <RelativeLayout
+                    android:id="@+id/RRback"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/back_icon" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/payment"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RRtoolbar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlMblMoney"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:id="@+id/llAirtel"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10sp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_airtel"/>
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llMoov"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10sp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_money"/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:visibility="gone"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="bold"/>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:id="@+id/llTransfer"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10sp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_transfer"/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="Airtel Money"
+                                android:visibility="gone"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="bold"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llCod"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10sp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_cod"/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="Paypal"
+                                android:visibility="gone"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="bold"/>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/llWallet"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10sp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_afary"/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="Mobi Cash"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                android:visibility="gone"
+                                android:textStyle="bold"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10sp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/credit">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="AfaryCode Credit"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="bold"/>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSendAnother"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+
+                        android:background="@drawable/login_border_btn"
+                        android:gravity="center"
+                        android:text="@string/send_my_invoice_to_another_person"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/white"
+                        android:visibility="visible"/>
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!--
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/loader"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="#6A000000"
+                        android:padding="@dimen/_130sdp"
+                        android:src="@drawable/coin"
+                        android:visibility="gone" />
+            -->
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlPaymentStatus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="@string/please_wait"
+                android:textColor="@color/quantum_grey"
+                android:textSize="@dimen/_25sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="center_horizontal"/>
+
+
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/loader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="#6A000000"
+                android:padding="@dimen/_130sdp"
+                android:src="@drawable/coin"
+                android:visibility="visible" />
+
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

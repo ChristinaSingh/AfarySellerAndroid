@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp"
+        android:layout_margin="@dimen/_7sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:inputType="textMultiLine"
+                android:fontFamily="@font/poppinsregular"
+                android:singleLine="true"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

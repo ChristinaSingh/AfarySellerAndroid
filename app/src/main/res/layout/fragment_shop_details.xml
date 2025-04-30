@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="shopDetailViewModel"
+            type="com.afaryseller.ui.shopdetails.ShopDetailViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/purple_200">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center|center_vertical">
+
+                <RelativeLayout
+                    android:id="@+id/RRback"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_3sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:src="@drawable/back_icon" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppinsregular"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/icon_edit"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivCover"
+            android:layout_below="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:src="@drawable/restorentsimg"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
+
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_below="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            app:sliderAnimationDuration="15"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="6"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorSelectedColor="@color/colorPrimary"
+            app:sliderIndicatorUnselectedColor="#5A5A5A"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewMain"
+            android:layout_below="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:id="@+id/tvShopName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:layout_marginTop="-2dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text=""
+                    android:drawableLeft="@drawable/location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/tvFullAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvClose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit"
+                    android:textColor="@color/red"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/laySwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardViewMain"
+            android:orientation="horizontal">
+
+
+
+            <Switch
+
+                android:id="@+id/switchOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@string/open"
+                android:textColor="@color/black"
+                android:checked="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rlProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/laySwitch"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+
+            <TextView
+                android:id="@+id/tvProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@string/products"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvAddProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:layout_alignParentEnd="true"
+                android:text="@string/add_product"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:paddingStart="@dimen/_7sdp"
+                android:paddingEnd="@dimen/_7sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:background="@drawable/login_border_btn"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlProduct"
+            >
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_product" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+
+    </RelativeLayout>
+
+</layout>

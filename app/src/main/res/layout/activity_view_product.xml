@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewProductViewModel"
+            type="com.afaryseller.ui.viewproduct.ViewProductViewModel" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color">
+
+
+            <RelativeLayout
+                android:id="@+id/RRtoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:padding="@dimen/_12sdp"
+                        android:src="@drawable/back_icon"
+                        app:tint="@color/purple_200" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/view_product"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:textStyle="bold" />
+
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_below="@+id/RRtoolbar"
+
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/layoutProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="visible">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:src="@drawable/restorentsimg"
+                        app:civ_border_color="#FFFF"
+                        app:civ_border_width="2dp" />
+
+                    <ImageView
+                        android:id="@+id/image_add"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignRight="@id/profile_image"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add_blue" />
+
+                </RelativeLayout>
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    app:sliderAnimationDuration="15"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="6"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorSelectedColor="@color/colorPrimary"
+                    app:sliderIndicatorUnselectedColor="#5A5A5A"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true"
+                    android:visibility="gone"/>
+
+
+
+
+
+                <TextView
+                    android:id="@+id/tvAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/add_picture"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible">
+
+                </TextView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/product_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/name_product"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:fontFamily="@font/poppinsregular"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLength="30"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/natural_gray"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/selling_price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvCurrency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:textSize="@dimen/_14sdp" />
+
+
+                        <EditText
+                            android:id="@+id/edSellingPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:fontFamily="@font/poppinsregular"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLength="30"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/natural_gray"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_65sdp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65sdp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:fontFamily="@font/poppinsregular"
+                            android:imeOptions="actionNext"
+                            android:inputType="textMultiLine"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="center_vertical|top"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/natural_gray"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/sku"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edSKU"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:fontFamily="@font/poppinsregular"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLength="30"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/natural_gray"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/free_delivery"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchProductStock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/product_out_of_stock"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+
+                <LinearLayout
+                    android:id="@+id/layoutCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="@string/item_categories"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13sdp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center"
+                            android:background="@drawable/login_border_btn"
+                            android:gravity="center"
+                            android:textAllCaps="true"
+                            android:padding="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:text="@string/add_categories"
+                            android:textColor="@color/white"
+                            android:visibility="invisible"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                    </RelativeLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSelectCate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/item_sub_categories"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+
+
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSelectSubCate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/brand"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+
+
+
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:id="@+id/tvBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/manage_attributes_and_options"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+
+
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAttri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+
+                <TextView
+                    android:id="@+id/tvProductImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:background="@drawable/login_border_btn"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/edit_product_image"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>
+

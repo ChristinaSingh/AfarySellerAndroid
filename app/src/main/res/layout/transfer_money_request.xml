@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/transfer_money_request"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/please_indicate_the_number_that_will_receive_your_transfer_and_enter_the_amount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/email_number"
+                android:textColor="@color/natural_gray"
+                android:textSize="@dimen/_14sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@color/white"
+                android:elevation="@dimen/_3sdp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true">
+
+                    <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_15sdp"/>
+
+                    <EditText
+                        android:id="@+id/mobile_no_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@id/ccp"
+                        android:background="@null"
+                        android:hint="@string/email_number"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal"/>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/amount"
+                android:textColor="@color/natural_gray"
+                android:textSize="@dimen/_14sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@color/white"
+                android:elevation="@dimen/_3sdp">
+
+
+                <EditText
+                    android:id="@+id/et_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="FCFA20.00"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="30"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/natural_gray"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/reason"
+                android:textColor="@color/natural_gray"
+                android:textSize="@dimen/_14sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@color/white"
+                android:elevation="@dimen/_3sdp">
+
+
+                <EditText
+                    android:id="@+id/etReason"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/enter_here"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="3"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/natural_gray"
+                    android:textSize="@dimen/_14sdp"
+                    android:gravity="center_vertical|top"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/payment_done"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/login_border_btn">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/done"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

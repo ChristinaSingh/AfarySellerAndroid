@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/sub_seller_navigation"
+app:startDestination="@id/navigation_home_sub_seller">
+
+<fragment
+    android:id="@+id/navigation_home_sub_seller"
+    android:name="com.afaryseller.ui.subseller.home.SubSellerHomeFragment"
+    android:label="@string/title_home"
+    tools:layout="@layout/fragment_sub_seller_home">
+
+
+    <action
+        android:id="@+id/action_sub_seller_home_fragment_to_orderList"
+        app:destination="@id/navigation_sub_seller_orderList" />
+
+    <!--
+        <action
+            android:id="@+id/action_home_fragment_to_search"
+            app:destination="@id/navigation_search" />-->
+
+
+</fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_report_sub_seller"
+        android:name="com.afaryseller.ui.subseller.report.SubSellerReportFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_sub_seller_periodic_report"/>
+
+
+
+
+    <fragment
+        android:id="@+id/navigation_profile_sub_seller"
+        android:name="com.afaryseller.ui.subseller.profile.SubSellerProfileFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_sub_seller_profile"/>
+
+
+
+    <fragment
+        android:id="@+id/navigation_sub_seller_orderList"
+        android:name="com.afaryseller.ui.bookedorder.OrderFragment"
+        android:label="@string/orders_list"
+        tools:layout="@layout/order_fragment"/>
+
+
+</navigation>

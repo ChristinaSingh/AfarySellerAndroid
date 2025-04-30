@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_here_the_afary_code_that_the_customer_will_present_to_you"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:padding="@dimen/_10sdp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp">
+
+
+            <EditText
+                android:id="@+id/edAfaryCode"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/gray_button_background"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="@string/afary_code"
+                android:inputType="text"
+                android:text="AFC-"
+                android:paddingStart="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:weightSum="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_below="@+id/recycler"
+                android:layout_gravity="center"
+                android:layout_weight=".45"
+                android:background="@drawable/rounded_red_15"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOk"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_below="@+id/recycler"
+                android:layout_gravity="center"
+                android:layout_weight=".45"
+
+                android:background="@drawable/login_border_btn"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/ok"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "113685443527",
+    "firebase_url": "https://quizup-2fe26.firebaseio.com",
+    "project_id": "quizup-2fe26",
+    "storage_bucket": "quizup-2fe26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113685443527:android:a06e8e6bc0178bbacd9fe2",
+        "android_client_info": {
+          "package_name": "com.afaryseller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Y3B8o_QarhMPZShs8OX5z2AhXQlRXvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113685443527:android:aa99563e592c36c6cd9fe2",
+        "android_client_info": {
+          "package_name": "com.keshavsavitatest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113685443527-eef7geh61bl7o8efr6tdees73hj40d74.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.keshavsavitatest",
+            "certificate_hash": "de354d2ba3ff13f8c249893e5d37c9f1c9dbac04"
+          }
+        },
+        {
+          "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Y3B8o_QarhMPZShs8OX5z2AhXQlRXvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113685443527:android:d78b823ba6b56722cd9fe2",
+        "android_client_info": {
+          "package_name": "com.my.afarycode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Y3B8o_QarhMPZShs8OX5z2AhXQlRXvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113685443527:android:589b7d91a60c90eb",
+        "android_client_info": {
+          "package_name": "quizapp.com.quizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113685443527-tv8qcj3q5ohhl37c1oful48jt0c9cbvs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "quizapp.com.quizapp",
+            "certificate_hash": "52ee4d75d7362242665cda7e03850060d181194f"
+          }
+        },
+        {
+          "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Y3B8o_QarhMPZShs8OX5z2AhXQlRXvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113685443527-qppdl9hvim2097abvk1huvdl2eort006.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

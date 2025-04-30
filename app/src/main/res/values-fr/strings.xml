@@ -1,0 +1,476 @@
+<resources>
+    <string name="app_name">l\'Appli vendeur</string>
+    <string name="title_activity_home">Activité Principal</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_service">Mes Services</string>
+    <string name="title_wallet">Porte Monnaie</string>
+    <string name="title_profile">Profile</string>
+    <string name="ok">OK</string>
+    <string name="notification_channel_id" translatable="false" />
+
+    <string name="login_now">Se connecter Maintenant</string>
+    <string name="register">Créer un compte</string>
+    <string name="login">Se connecter</string>
+    <string name="already">Avez-vous déja un compte? </string>
+    <string name="add_skil">Ajouter vos compétences</string>
+    <string name="add_next">Suivant</string>
+    <string name="_135_136_sneh_nagar_near_agrasen_marg">135-136 sneh nagar, near agrasen marg</string>
+    <string name="demo_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh quis aliquam enim, ut enim convallis. </string>
+    <string name="update">Mettre à jour</string>
+    <string name="channelId">ID de canal</string>
+    <string name="select_skill">Selectionner les compétences</string>
+    <string name="select_shops">Boutiques</string>
+
+    <string name="servre">Votre demande d’adhésion a été envoyée à l’administration d’AfaryCode. Veuillez patienter, vous recevrez une notification dans quelques instants.</string>
+<!--
+    <string name="register1"><u>S'inscrire</u></string>
+-->
+    <string name="register1">S\'inscrire</string>
+
+    <string name="servre2">BRAVO!!! Votre demande d’adhésion a été validée. CLIQUEZ SUR OK et commencez une aventure passionnante.</string>
+
+    <string name="home_"> Cliquez sur cette icône pour ajouter vos compétences ou cliquez sur mes services.</string>
+    <string name="home_1"> En cliquant sur l’icône d’ajout, veuillez ajouter vos compétences préférées.</string>
+
+    <string name="add_shops"> En cliquant sur l’icône d’ajout, veuillez ajouter vos boutiques.</string>
+
+    <string name="Skip"><u>Quitter</u></string>
+    <string name="change_password">Changer le mot de passe</string>
+    <string name="old_password">Ancien mot de passe</string>
+    <string name="new_password">Nouveau mot de passe</string>
+    <string name="con_password">Confirmer le mot de passe</string>
+    <string name="others">AUTRES</string>
+    <string name="update_profile">Mettre à jour le Profil</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+    <string name="terms_and_conditions">Conditions Générales</string>
+    <string name="my_shopping_online_order">Mes commandes en ligne</string>
+    <string name="my_pharmacy_orders">Mes commandes en pharmacie</string>
+    <string name="my_requests">Mes requetes</string>
+    <string name="my_profile">Mon Profil</string>
+    <string name="logout">Déconnexion</string>
+    <string name="commitment1">1.  Prioriser les commandes AfaryCode.</string>
+    <string name="commitment2">2.  Donnez de vraies informations</string>
+    <string name="commitment3">3.  Être fiable et ponctuel, respecter les engagements.</string>
+    <string name="commitment4">4.  Respecter les conditions.</string>
+    <string name="commitment5">5.  Etre sérieux et avoir de la rigueur.</string>
+    <string name="usd">USD</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="sign_in">Se connecter</string>
+    <string name="upload_text">Téléchargez votre photo avec une piece d’identité comme ci-dessous</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="demo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient</string>
+    <string name="book_your_nearby_provider">Recherchez votre prestataire à proximité</string>
+    <string name="don_t_have_an_account">Vous n\'avez pas de compte ?</string>
+    <string name="password">Mot de passe</string>
+    <string name="email_address_mobile_number">Numero de mobile</string>
+    <string name="email_address_mobile_number1">Email/Numero de mobile</string>
+    <string name="verify">Vérifier</string>
+
+    <string name="title_get_start">Pour commencer en tant que prestataire, nous vous invitons à valider cette charte de bonne conduite..</string>
+    <string name="user_name">Pseudo</string>
+    <string name="e_mail">Email</string>
+    <string name="city">Ville</string>
+    <string name="please_wait">Veuillez patienter</string>
+    <string name="network_failure">veuillez vérifier votre connexion</string>
+    <string name="register_now">S\'inscrire maintenant</string>
+    <string name="one_app_that_takes_care_in_every_thing">Une application qui s\'occupe de tout</string>
+    <string name="do_you_have_a_customer_account">Avez-vous un compte client chez AfaryCode ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Nom</string>
+    <string name="select_country">Choisir un pays</string>
+
+
+
+
+
+    <!-- AIzaSyCsAl96Phonf22z69GSDlYQOjlDO6NsiWk-->
+    <!--AIzaSyCjm3GS5HaNLYXnxqqF_IhsufMpQgcx8T0-->
+
+    <string name="place_api_key">AIzaSyAAjp4wuz5FyteoKH3Yp7Cv8pS1K86fJw0</string>
+    <string name="address">Adresse</string>
+    <string name="please_enter_username">Entrer votre pseudo</string>
+    <string name="please_enter_name">Entrer le nom</string>
+    <string name="please_enter_email">Entrer votre adresse e-mail</string>
+    <string name="please_enter_phone_number">Entrer le numéro de téléphone</string>
+    <string name="please_select_address">Saisir l\'adresse</string>
+    <string name="enter_password">Entrer le mot de passe</string>
+    <string name="please_enter_confirm_password">Confirmer le mot de passe</string>
+    <string name="password_does_not_matched">Le mot de passe ne correspond pas</string>
+    <string name="please_enter_country">Entrer le pays</string>
+    <string name="please_enter_city">Entrer la ville</string>
+    <string name="wrong_email">Mauvaise adresse e-mail</string>
+    <string name="select_image_from">Sélectionnez une image à partir de</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">gallerie</string>
+    <string name="required">requis</string>
+    <string name="login_successfully">Connexion réussie</string>
+    <string name="my_service">Mes Services</string>
+    <string name="skills_not_available">Compétences non disponibles</string>
+    <string name="zipcode">Code postal</string>
+    <string name="periodic_report">Rapports périodiques</string>
+    <string name="proposal_list_page">Page de la liste des propositions</string>
+    <string name="save_password">Enregistrer le mot de passe</string>
+    <string name="repeat_password">Répéter le mot de passe</string>
+    <string name="password_changed_successfully">Mot de passe modifié avec succès</string>
+    <string name="rechareg_balance">Recharge et Solde</string>
+    <string name="contact_support">Contacter le support</string>
+    <string name="can_not_empty">Le champ ne peut pas être vide</string>
+    <string name="mobile_account_two">Numéro de mobile2</string>
+    <string name="mobile_account_one">Numéro de mobile1</string>
+    <string name="please_upload_profile_img">Ajouter l\'image 1 de la boutique  </string>
+    <string name="please_select_city">Sélectionner la ville</string>
+    <string name="please_select_country">Sélectionner le pays</string>
+    <string name="please_add_mobile_network_account_number1">Ajouter la numéro de votre compte mobile 1</string>
+    <string name="please_add_mobile_network_account_number2">Ajouter la numéro de votre compte mobile 2</string>
+    <string name="please_enter_address">Veuillez saisir l\'adresse</string>
+    <string name="add_shop_logo_here">Ajoutez le logo de la boutique ici</string>
+    <string name="add_shop_logo">Ajouter le logo de la boutique/ Photo</string>
+    <string name="add_1st_shop_photo_here">Ajoutez la 1ère photo de la boutique ici</string>
+    <string name="add_2st_shop_photo_here">Ajoutez une 2ème photo de la boutique ici</string>
+    <string name="please_upload_profile_img2">ajouter l\'image 2 de la boutique</string>
+    <string name="please_upload_shp_logo">Ajouter le logo de la boutique</string>
+    <string name="my_shops_list">Liste de mes boutiques</string>
+    <string name="product_name">Nom du produit</string>
+    <string name="selling_price">Prix ​​de vente</string>
+    <string name="description">Description</string>
+    <string name="sku">SKU (numéro de référence de votre produit)</string>
+    <string name="create_product">Créer un produit</string>
+    <string name="update_images">Mettre à jour les images</string>
+    <string name="item_categories">Catégories d\'articles</string>
+    <string name="add_categories">ajouter des catégories</string>
+    <string name="brand">Marque</string>
+    <string name="set_brand">indiquer la marque</string>
+    <string name="manage_attributes_and_options">Gérer les attributs et options</string>
+    <string name="add_attributes">ajouter des attributs</string>
+    <string name="free_delivery">Livraison gratuite</string>
+    <string name="add_a_new_prodcut">Ajouter un nouveau produit</string>
+    <string name="main_categories">Catégories principales</string>
+    <string name="select_category_for_this_product">Sélectionnez les catégories pour ce produit</string>
+    <string name="create_new_brand">Créer une nouvelle marque</string>
+    <string name="write_a_new_brand_name">saisir un nouveau nom de marque</string>
+    <string name="select_or_search_your_product_brand_name">Sélectionnez ou recherchez le nom de la marque de votre produit</string>
+    <string name="search_brand">Rechercher des marques</string>
+    <string name="please_enter_brand_name">Saisir le nom de la marque</string>
+    <string name="select_sub_category_for_this_product">Sélectionnez les sous-catégories pour ce produit</string>
+    <string name="sub_categories">Sous-catégories</string>
+    <string name="add">Ajouter</string>
+    <string name="item_sub_categories">Sous-catégories d\'articles</string>
+    <string name="create_product_brand">Créer une marque de produit</string>
+    <string name="please_select_brand">Sélectionner une marque</string>
+    <string name="create_new_attribute">Créer un nouvel attribut</string>
+    <string name="write_new_attribute">Écrire un nouvel attribut</string>
+    <string name="select_or_search_your_product_attribute">Sélectionnez ou recherchez l\'attribut de votre produit</string>
+    <string name="add_attribute">Ajouter des attributs</string>
+    <string name="add_or_remove_options">Ajouter ou supprimer des options</string>
+    <string name="add_new_options">Ajouter de nouvelles options</string>
+    <string name="options">options</string>
+    <string name="done">Terminé</string>
+    <string name="please_enter_attribute">Saisir l\'attribut</string>
+    <string name="create_variation">Créer une variation</string>
+    <string name="please_enter_option">Veuillez entrer l\'option</string>
+    <string name="please_select_variations">Sélectionner les variantes</string>
+    <string name="please_select_attribute">Sélectionner l\'attribut</string>
+    <string name="add_product_image">Ajouter une image du produit</string>
+    <string name="product_image1">Ajoutez la 1ère photo du produit ici</string>
+    <string name="product_image2">Ajoutez ici la 2ème photo du produit</string>
+    <string name="product_image3">Ajouter une 3ème photo du produit ici</string>
+    <string name="product_image4">Ajouter la 4ème photo du produit ici</string>
+    <string name="please_add_sub_category">Ajouter une sous-catégorie</string>
+    <string name="please_add_brand">Ajouter la marque</string>
+    <string name="please_add_attribute">Ajouter un attribut</string>
+    <string name="please_add_1st_product_image">Ajouter la 1ère image du produit</string>
+    <string name="please_add_2nd_product_image">Ajouter la 2ème image du produit</string>
+    <string name="please_add_3rd_product_image">Veuillez ajouter une 3ème image du produit</string>
+    <string name="please_add_4th_product_image">Veuillez ajouter une 4ème image du produit</string>
+    <string name="edit">Modifier</string>
+    <string name="active">Actif</string>
+    <string name="open">Ouvert</string>
+    <string name="products">Produits</string>
+    <string name="name">Nom</string>
+    <string name="edit_profile">Mettre à jour le profil</string>
+    <string name="country">Pays</string>
+    <string name="update_successfully">Mise à jour réussie</string>
+    <string name="please_upload_profile_pic">Télécharger une photo de profil</string>
+    <string name="pending_approval">En attente d\'approbation</string>
+    <string name="view">Voir</string>
+    <string name="state">Etat</string>
+    <string name="please_enter_state">Veuillez entrer l\'état</string>
+    <string name="opening_hours">Heures d\'ouverture</string>
+    <string name="deactive">Désactivé</string>
+    <string name="subscribe">S\'abonner</string>
+    <string name="subscription_plan">Plans d\'abonnement</string>
+    <string name="subscription">Abonnement</string>
+    <string name="pay">Payer</string>
+
+    <string name="more_information">Plus d\'informations</string>
+    <string name="pay_now">Payer maintenant</string>
+    <string name="please_indicate_the_airtel_money_number_by_which_you_wish_to_make_the_payment">Indiquer le numéro Airtel money par lequel vous souhaitez effectuer le paiement</string>
+    <string name="please_indicate_the_moov_money_number_by_which_you_wish_to_make_the_payment">Indiquer le numéro Moov money par lequel vous souhaitez effectuer le paiement</string>
+    <string name="please_enter_numbre">Entrez le numéro ici</string>
+    <string name="back">Retour</string>
+    <string name="get_plan">Dans cette boutique, la limite de produits dépasse votre forfait. Veuillez donc obtenir un forfait</string>
+    <string name="get_plann">Obtenir un plan</string>
+    <string name="edit_product">Modifier le produit</string>
+    <string name="update_product">Mettre à jour le produit</string>
+    <string name="edit_product_image">Modifier l\'image du produit</string>
+    <string name="view_product">Voir le produit</string>
+    <string name="notifications">Notifications</string>
+    <string name="decline">Refuser</string>
+    <string name="orders_list">Liste des commandes</string>
+    <string name="order_details">Détails de la commande</string>
+    <string name="afary_code">Le Code Afary</string>
+    <string name="present_this_code">Present this code only if the seller accept order</string>
+    <string name="item_list">Liste des articles</string>
+    <string name="chat">Tchat</string>
+    <string name="accept">Accepter</string>
+    <string name="qty">Qty X Prix</string>
+    <string name="total">Total</string>
+    <string name="assign">Attribuer</string>
+    <string name="to_become_a_seller">Pour devenir vendeur Veuillez ouvrir votre compte client et suivre les étapes.</string>
+    <string name="type_msg">Tapez un message</string>
+    <string name="are_you_sure_you_want_to_delete_this_product">Etes-vous sûr de vouloir supprimer ce produit ?</string>
+
+
+    <string name="terms_of_use">Conditions d\'utilisation</string>
+    <string name="use_conditions">Conditions d\'utilisation</string>
+    <string name="next">Suivant</string>
+    <string name="not_available">boutique non disponible</string>
+    <string name="search_shop_here">Rechercher une boutique ici.</string>
+    <string name="search_shop">Rechercher dans la boutique</string>
+
+<!--
+    <string name="product_creation_text">Dear service provider\nCongratulations, your product is created, and is awaiting validation by the admin  in a few moments. you can create other products in the meantime. Your product ID is : XXXXX</string>
+-->
+
+
+  <!--  <string name="product_creation_text">
+    Cher prestataire de services&#10;Félicitations, votre produit est créé, et attend la validation de l&apos;administrateur dans quelques instants. Vous pouvez créer d&apos;autres produits en attendant. Votre identifiant produit est : XXXXX
+</string>-->
+
+    <string name="product_creation_text">Cher prestataire</string>
+    <string name="product_creation_text2">Félicitations, votre produit est créé, et attend la validation de l\'administrateur dans quelques instants. vous pouvez créer d\'autres produits en attendant. Votre identifiant produit est: XXXXX</string>
+
+
+
+    <string name="go">Aller</string>
+    <string name="delivery_charge">Frais de livraison</string>
+    <string name="close">Fermer</string>
+    <string name="track_order">Suivre la commande</string>
+
+    <string name="api_key_map">AIzaSyAXTJrvnDTC8AjYzK2dPatsSAMJaTIc-c0</string>
+    <string name="google_direction_key">AIzaSyAAjp4wuz5FyteoKH3Yp7Cv8pS1K86fJw0</string>
+    <string name="order_history">Historique des commandes</string>
+    <string name="in_stock">En stock</string>
+    <string name="out_of_stock">En rupture de stock</string>
+    <string name="product_out_of_stock">Produit en rupture de stock</string>
+    <string name="accept_all">Tout Accepter</string>
+    <string name="decline_all">Refuser tout</string>
+    <string name="chat_list">Liste de discussion</string>
+    <string name="enter_email">Entrez l\'email</string>
+    <string name="send_request_to_admin">Envoyer une demande à l\'administrateur pour réinitialiser le mot de passe</string>
+    <string name="add_picture">Ajouter une image</string>
+    <string name="send">Envoyer</string>
+    <string name="sub_total">Sous-total</string>
+    <string name="platform_fees">Frais de Service</string>
+    <string name="tax1">Taxe 1</string>
+    <string name="tax2">Taxe 2</string>
+    <string name="shipping_cost_amount">Montant des frais d\'expédition</string>
+    <string name="order_id">"Numéro de commande : "</string>
+    <string name="order_status">"Statut de la commande : "</string>
+    <string name="otp_text">Nous vous avons envoyé un SMS sur\n</string>
+    <string name="with_6_digit">avec un code de vérification à 6 chiffres.</string>
+    <string name="did_not_receive_code">Vous n\'avez pas reçu le code ?</string>
+    <string name="resend">Renvoyer</string>
+    <string name="try_another_way">Essayez une autre méthode</string>
+    <string name="search_here">Rechercher ici</string>
+    <string name="smile_to_serve">Souriez, vous etes servi</string>
+    <string name="phone">Téléphone</string>
+    <string name="_continue">Continuer</string>
+    <string name="already_have_an_account">Vous avez déjà un compte ?</string>
+    <string name="upload_id_card">Ajouter votre Piece d\'identité</string>
+    <string name="click_this_terms_condition">En vous inscrivant, vous acceptez nos CONDITIONS D\'UTILISATION</string>
+    <string name="payments">Paiements</string>
+    <string name="delivery">Livraison</string>
+    <string name="add_shop">Ajouter une boutique</string>
+    <string name="shop_name">Nom de la boutique</string>
+    <string name="shop_description">Description de la boutique</string>
+    <string name="address_">Adresse</string>
+    <string name="neighbourhood">Plus de precision sur l\'endroit</string>
+    <string name="select_country_">Sélectionnez un pays</string>
+    <string name="add_phone_number">Ajouter un numéro de téléphone</string>
+    <string name="public_holidays_nwe_are_close">Jours fériés,\nnous sommes fermés!</string>
+    <string name="daily_close">Jour fermé</string>
+    <string name="open_timing">Horaires d\'ouverture</string>
+    <string name="set_time">Régler l\'heure</string>
+    <string name="close_time">Heure de fermeture</string>
+    <string name="add_public_holidays">Ajouter des jours fériés</string>
+    <string name="edit_">MODIFIER</string>
+    <string name="view_">VOIR</string>
+    <string name="product_">+ PRODUIT</string>
+    <string name="select_currency">Sélectionnez la devise</string>
+    <string name="please_select_currency">Sélectionner la devise</string>
+    <string name="enter_code">Entrer le code</string>
+    <string name="hello">Bonjour</string>
+    <string name="please_change_your_password">Veuillez changer votre mot de passe</string>
+    <string name="add_product">Ajouter un produit</string>
+    <string name="email">Email</string>
+    <string name="please_enter_valid_email">Veuillez saisir une adresse e-mail valide</string>
+
+
+
+    <string name="default_channel_id">my_channel_id</string>
+    <string name="please_check_your_email_address">Veuillez vérifier votre email, nous avons envoyé un mot de passe sur votre adresse email</string>
+    <string name="send_admin_request_successfull">Envoyer la demande d\'administration avec succès</string>
+    <string name="enter_otp">entrez OTP</string>
+    <string name="otp_successfully_send">otp a envoyé avec succès votre numéro de mobile</string>
+    <string name="change_language">Changer la langue</string>
+    <string name="english">Anglais</string>
+    <string name="french">Français</string>
+    <string name="language_changed">Langue changée en %1$s</string>
+    <string name="are_you_sure_logout">Êtes-vous sûr de vouloir vous déconnecter de cette application ?</string>
+    <string name="select">Sélectionner</string>
+    <string name="do_you_have_account">Avez-vous déjà un</string>
+    <string name="customer">Cliente</string>
+    <string name="with_afary_code">compte avec AfaryCode ??</string>
+    <string name="register_successfully">Inscrivez-vous avec succès..</string>
+    <string name="password_change_by_admin">Mot de passe modifié par l\'administrateur</string>
+    <string name="please_upload_id">Veuillez télécharger votre identifiant</string>
+    <string name="please_check_terms_and_condition">Veuillez vérifier les termes et conditions</string>
+    <string name="receive_the_code_by_whatsapp">Recevez le code par WhatsApp</string>
+    <string name="please_add_open_time">Veuillez ajouter l\'heure d\'ouverture du magasin</string>
+    <string name="please_add_close_tiem">Veuillez ajouter l\'heure de fermeture du magasin</string>
+    <string name="membership_paln">Forfait d\'adhésion</string>
+    <string name="no_plan_active">Aucun plan actif</string>
+    <string name="product_quantity">Quantité du produit</string>
+    <string name="remaining">restant</string>
+    <string name="read_more">LIRE LA SUITE</string>
+    <string name="certify_seller">Certifier le vendeur : </string>
+    <string name="sold_by">Vendu par :</string>
+
+    <string name="paymentN">Paiement : </string>
+    <string name="secure_transaction">transaction sécurisée</string>
+    <string name="ship_by">Expédier par : </string>
+    <string name="product_details">Détails du produit</string>
+    <string name="attribute">Attribut</string>
+
+
+    <string name="cancel">Annuler</string>
+    <string name="please_enter_here_the_afary_code_that_the_customer_will_present_to_you">Veuillez saisir ici le code afary que le client vous présentera</string>
+    <string name="please_enter_afary_code">Veuillez saisir le code afary</string>
+    <string name="order_completed">Commande terminée</string>
+    <string name="order_cancel_reason">Raison de l\'annulation de la commande</string>
+    <string name="reason">raison</string>
+    <string name="submit">Soumettre</string>
+    <string name="wallet">Portefeuille</string>
+    <string name="available_balance">Solde disponible</string>
+    <string name="add_money">AJOUTER DE L\'ARGENT</string>
+    <string name="add_money1">AJOUTER DE L\'ARGENT</string>
+    <string name="transfer_money">TRANSFERT D\'ARGENT</string>
+    <string name="withdraw_money">RETIRER DE L\'ARGENT</string>
+
+
+    <string name="choose_or_enter_amount">Choisissez ou saisissez le montant</string>
+    <string name="send_my_invoice_to_another_person">Envoyer ma facture à une autre personne</string>
+    <string name="payment">Paiement</string>
+    <string name="invoice_send_sucessfully">Facture envoyée avec succès.</string>
+    <string name="please_enter_number">Veuillez entrer un numéro</string>
+    <string name="send_another_to_payment">Paiement par envoi d\'une facture à une autre personne</string>
+    <string name="withdraw_money_">Retirer de l\'argent</string>
+    <string name="reference_of_the_transaction_to_be_reimbursed">référence de la transaction à rembourser</string>
+    <string name="text_area_for_help">Zone de texte d\'aide</string>
+    <string name="insert_the_transaction_id_for_which_you_wish_to_be_reimbursed">Insérez l\'ID de transaction pour laquelle vous souhaitez être remboursé</string>
+    <string name="insert_id_here">Insérer l\'ID ici</string>
+    <string name="transfer_money_">Transférer de l\'argent</string>
+    <string name="send_money_to_someone_else_s_wallet">Envoyer de l\'argent vers le portefeuille de quelqu\'un d\'autre</string>
+    <string name="request_money_from_someone_receive_in_my_wallet">Demander de l\'argent à quelqu\'un (recevoir dans mon portefeuille)</string>
+    <string name="your_amount_will_be_debited_for">Votre portefeuille sera débité de</string>
+    <string name="choose_payment_type">Choisissez le type de paiement</string>
+    <string name="please_indicate_the_number_that_will_receive_your_transfer_and_enter_the_amount">Veuillez indiquer l\'e-mail/le numéro qui recevra votre transfert et saisir le montant.</string>
+    <string name="email_number">E-mail/Numéro</string>
+    <string name="enter_email_number">entrez l\'e-mail/le numéro</string>
+    <string name="enter_amount">entrez le montant</string>
+    <string name="amount">Montant</string>
+    <string name="fess">Frais</string>
+    <string name="total_amount">Montant total</string>
+    <string name="your_wallet_will_be_debited_for">Votre portefeuille sera débité de</string>
+    <string name="please_indicate_the_airtel_money_number_by_which_you_wish_to_debit_the_payment">Veuillez indiquer le numéro Airtel money par lequel vous souhaitez débiter le paiement</string>
+    <string name="transfer_money_request">Demande de transfert d\'argent</string>
+    <string name="enter_here">Entrez ici</string>
+    <string name="your_request_has_been_sent_to_your_correspondent">Votre demande a été envoyée à votre correspondant.</string>
+    <string name="discription_muust_">La description doit comporter au moins 5 000 caractères</string>
+    <string name="total_price_to_pay">Prix total à payer</string>
+    <string name="invoice_share_by">Partage de facture par</string>
+    <string name="alert">Alerte</string>
+    <string name="please_login">Veuillez vous connecter</string>
+    <string name="low_wallet_balance">Solde de portefeuille faible, veuillez recharger votre portefeuille.</string>
+    <string name="days">JOURS</string>
+    <string name="currenty_your_account_deactive">Actuellement, votre compte est désactivé, veuillez contacter l\'administrateur</string>
+    <string name="product_not_validate">Votre produit n\'est pas validé</string>
+    <string name="doesnt_validate">Ne valide pas</string>
+
+    <string name="dear_service_provider">Cher fournisseur de services</string>
+    <string name="sorry_your_product">Désolé, votre produit</string>
+    <string name="has_not_been_validate">n\'a pas été validé</string>
+    <string name="please_go_to_your_product_list">Veuillez vous rendre sur la liste de vos produits, puis cliquez sur modifier et effectuez la mise à jour demandée.</string>
+    <string name="your_product">votre produit</string>
+    <string name="product_has_been_validate">a été validé et est désormais en ligne sur toutes nos plateformes.</string>
+    <string name="good_luck">Bonne chance</string>
+
+    <string name="delivery_person_accept_request">Le livreur accepte la demande</string>
+    <string name="wallet_recharge_failed">Échec de la recharge du portefeuille</string>
+    <string name="wallet_recharge">Recharge du portefeuille</string>
+    <string name="your_account_is_activated">Votre compte est activé</string>
+    <string name="order_accepted">Commande acceptée...</string>
+    <string name="order_cancelled">Commande annulée...</string>
+    <string name="cancelled">Annulé</string>
+    <string name="order_not_available">commande non disponible</string>
+    <string name="complete">Complet</string>
+    <string name="completed">Terminé</string>
+
+    <string name="product_edit_sucessfully">Modification du produit réussie.</string>
+    <string name="are_you_sure_you_want_to">Êtes-vous sûr de vouloir</string>
+    <string name="this_shop">cette boutique?</string>
+    <string name="are_you_sure_you_want_to_delete_this_attribute">Êtes-vous sûr de vouloir supprimer cet attribut?</string>
+    <string name="are_you_sure_you_want_to_delete_this_sub_attribute">Êtes-vous sûr de vouloir supprimer ce sous-attribut?</string>
+    <string name="notify_admin">Notifier l\'administrateur</string>
+    <string name="notify_admin_successfully">notifier l\'administrateur avec succès.</string>
+
+    <string name="sub_seller_sign_up">Inscription du sous-vendeur</string>
+    <string name="create_sub_seller">Créer un sous-vendeur</string>
+    <string name="sub_seller">Sous-vendeurs</string>
+    <string name="sub_seller_not_available">sous-vendeur non disponible</string>
+    <string name="subseller">Sous-vendeur</string>
+    <string name="delete_account">Supprimer le compte</string>
+    <string name="are_you_sure_you_want_to_delete_this_account">Êtes-vous sûr de vouloir supprimer ce compte?</string>
+    <string name="delete_successfully">supprimer avec succès</string>
+    <string name="sub_seller_register_sucessfully">inscription du sous-vendeur réussie</string>
+
+    <string name="select_seller">Sélectionner un vendeur</string>
+    <string name="please_select_seller">Veuillez sélectionner le vendeur</string>
+    <string name="sub_seller_login">Connectez-vous en tant que sous-vendeur</string>
+    <string name="order_return">Retour de commande</string>
+    <string name="product_received">produit reçu</string>
+    <string name="are_you_sure_delivery_man_has_been_returned_product_to_you">Êtes-vous sûr que le livreur vous a retourné le produit?</string>
+    <string name="transit">Transport</string>
+    <string name="delivered">Livré</string>
+    <string name="numner_of_days_remaining">Nombre de jours restants</string>
+
+
+    <string name="email_already_exits">l\'e-mail existe déjà</string>
+    <string name="mobile_number_already_exits">le numéro de mobile existe déjà</string>
+    <string name="invalid_otp">OTP invalide</string>
+    <string name="welcome_to_afarycode">Bienvenue à AfaryCode</string>
+
+    <string name="shop">Boutique</string>
+    <string name="assign_shop">Attribuer une boutique</string>
+    <string name="select_shop">Sélectionner une boutique</string>
+    <string name="for_what_reason_are_you_cancelling_order">Pour quelle raison annulez-vous la commande?</string>
+    <string name="i_am_out_of_stock">Je suis en rupture de stock</string>
+    <string name="for_another_reason">pour une autre raison</string>
+    <string name="product_is_out_of_stock">le produit est en rupture de stock</string>
+    <string name="select_reason">Sélectionnez le motif d\'annulation de la commande</string>
+
+    <string name="available_product">Nombre de produits disponibles</string>
+    <string name="please_select_number_of_available_product">Veuillez sélectionner le nombre de produits disponibles</string>
+    <string name="dear_partner_your_product_is_almost_out_of_stock_do_you_want_to_increase_the_stock">Cher partenaire votre produit (détail du produit) est presque en rupture de stock Voulez-vous augmenter le stock ??</string>
+</resources>

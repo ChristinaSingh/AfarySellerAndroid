@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home_sub_seller"
+        android:icon="@drawable/homee"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_report_sub_seller"
+        android:icon="@drawable/my_bookings"
+        android:title="@string/periodic_report" />
+
+
+
+    <item
+        android:id="@+id/navigation_profile_sub_seller"
+        android:icon="@drawable/my_profile"
+        android:title="@string/title_profile" />
+
+</menu>
+

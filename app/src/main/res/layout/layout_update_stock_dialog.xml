@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:id="@+id/header_logo"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_well1" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_logo">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_25sdp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+
+
+                    <ImageView
+                        android:id="@+id/ivProductImg"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/logo_well1" />
+
+
+
+
+                    <TextView
+                        android:id="@+id/tvProductName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_15sdp"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tvProductId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_15sdp"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tvProductSku"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_15sdp"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:id="@+id/tvMsg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_15sdp"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/btnCancel"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_weight=".45"
+                        android:background="@drawable/btn_shape_red_captule">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/out_of_stock"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".1"/>
+
+                    <RelativeLayout
+                        android:id="@+id/btnUpdate"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_weight=".45"
+                        android:background="@drawable/btn_accept_green_bg">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/in_stock"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+</layout>

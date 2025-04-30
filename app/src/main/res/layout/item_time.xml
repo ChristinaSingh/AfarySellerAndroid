@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="@dimen/_7sdp"
+        android:layout_margin="@dimen/_7sdp">
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@color/blue_circle"
+                android:fontFamily="@font/poppinsregular"
+                android:padding="@dimen/_8sdp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

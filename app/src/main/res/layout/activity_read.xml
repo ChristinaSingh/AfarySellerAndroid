@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.splash.ReadAct">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/logo1" />
+
+
+                <LinearLayout
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logo"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/_15sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/title_get_start"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/commitment1"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/commitment2"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/commitment3"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/commitment4"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/commitment5"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_below="@+id/content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/login_border_btn">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppinsregular"
+                        android:gravity="center_horizontal"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:text="@string/ok"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

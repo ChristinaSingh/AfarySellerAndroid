@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activity.SearchActivity">
+
+
+    <data>
+        <variable
+            name="searchViewModel"
+            type="com.afaryseller.ui.search.SearchViewModel" />
+    </data>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+
+
+
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/border_search"
+            android:iconifiedByDefault="false"
+            android:layoutDirection="rtl"
+            android:padding="@dimen/_5sdp"
+            android:queryHint="@string/search_here"
+            app:defaultQueryHint="Search Here" />
+
+
+
+
+
+
+
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperRefresh"
+            android:layout_below="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                android:id="@+id/recy_list"
+                android:scrollbars="none" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/tvNotFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/not_available"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="@dimen/_14sdp"
+            android:visibility="gone"/>
+
+
+
+
+
+
+    </RelativeLayout>
+</layout>

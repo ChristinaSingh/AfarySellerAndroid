@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_white">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/withdraw_money_"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/reference_of_the_transaction_to_be_reimbursed"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/amount"
+                android:textColor="@color/natural_gray"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/tvTransaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/natural_gray"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/natural_gray"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tvNewBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/natural_gray"
+                android:textSize="@dimen/_12sdp" />
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/white"
+                android:elevation="@dimen/_3sdp">
+
+
+                <EditText
+                    android:id="@+id/edHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/text_area_for_help"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLength="70"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/natural_gray"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/done_withdraw"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/login_border_btn">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/done"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

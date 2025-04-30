@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="editTimeViewModel"
+            type="com.afaryseller.ui.editTime.EditTimeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@drawable/border_new">
+
+            <RelativeLayout
+                android:id="@+id/r_back"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/back_icon" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/opening_hours"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_45sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/holiday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Public Holidays,\nWe are close!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/public_holidays_nwe_are_close"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/daily_close"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewDays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/open_timing"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewOpenTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/close_time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewCloseTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"/>
+
+                <LinearLayout
+                    android:id="@+id/layoutHolidays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/edit_box"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/add_public_holiday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:hint="@string/add_public_holidays"
+                        android:padding="@dimen/_12sdp">
+
+                    </EditText>
+
+                    <ImageView
+                        android:id="@+id/calander"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/calendar">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvHolidays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"/>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/login_border_btn">
+
+                    <TextView
+                        android:id="@+id/submit_btn_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppinsregular"
+                        android:gravity="center_horizontal"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:text="@string/update"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <!--  <TextView
+                      android:id="@+id/submit"
+                      android:layout_width="@dimen/_100sdp"
+                      android:layout_height="@dimen/_35sdp"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_marginVertical="@dimen/_25sdp"
+                      android:background="@drawable/add_blue"
+                      android:elevation="@dimen/_1sdp"
+                      android:fontFamily="@font/poppinsregular"
+                      android:gravity="center"
+                      android:text="submit"
+                      android:textAllCaps="false"
+                      android:textColor="@color/white"
+                      android:textSize="@dimen/_14sdp" />-->
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</layout>
+
+

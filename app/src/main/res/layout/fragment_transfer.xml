@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/transfer_money_"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:textStyle="bold"/>
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/btnFirst"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/login_border_btn">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/send_money_to_someone_else_s_wallet"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/btnSecond"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/login_border_btn">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/request_money_from_someone_receive_in_my_wallet"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

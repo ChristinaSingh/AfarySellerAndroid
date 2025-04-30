@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_width="match_parent">
+
+        <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+
+        app:cardCornerRadius="@dimen/_7sdp"
+        android:layout_margin="@dimen/_7sdp">
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@color/blue_circle"
+                android:fontFamily="@font/poppinsregular"
+                android:padding="@dimen/_8sdp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/ivRemove"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/cancel"
+            android:elevation="@dimen/_10sdp"/>
+
+    </RelativeLayout>
+</layout>

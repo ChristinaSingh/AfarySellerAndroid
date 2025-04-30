@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_margin="@dimen/_7sdp"
+            app:cardBackgroundColor="#fff"
+            app:cardElevation="@dimen/_7sdp"
+            app:cardCornerRadius="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/ivImg"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_weight=".27"
+                    android:src="@drawable/restorentsimg"
+                    android:scaleType="centerCrop"/>
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".73"
+                    android:padding="@dimen/_14sdp">
+
+
+                    <TextView
+                        android:id="@+id/tvProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppinsregular"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        />
+
+                    <TextView
+                        android:layout_below="@+id/tvProduct"
+                        android:id="@+id/tvProductPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/purple_200"
+                        android:fontFamily="@font/poppinsregular"
+                        android:layout_marginTop="-5dp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:layout_below="@+id/tvProductPrice"
+                        android:id="@+id/tvProductApproval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pending_approval"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="@color/colorRed"
+                        android:layout_marginTop="-5dp"
+                        android:fontFamily="@font/poppinsregular"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tvFeeType"
+                        android:layout_below="@+id/tvProductApproval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/free_delivery"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="@color/colorRed"
+                        android:fontFamily="@font/poppinsregular"
+                        android:layout_marginTop="-2dp"
+                        />
+
+
+
+
+                    <TextView
+                        android:id="@+id/tvEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_10sdp"
+                        android:background="@drawable/login_border_btn"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppinsregular"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingStart="@dimen/_7sdp"
+                        android:paddingEnd="@dimen/_7sdp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tvView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/view"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"
+                        android:paddingStart="@dimen/_7sdp"
+                        android:paddingEnd="@dimen/_7sdp"
+                        android:background="@drawable/login_border_btn"/>
+
+
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/active"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppinsregular"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingStart="@dimen/_7sdp"
+                        android:paddingEnd="@dimen/_7sdp"
+                        android:background="@drawable/btn_accept_green_bg"
+                        />
+
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_del"
+            android:elevation="@dimen/_15sdp"/>
+
+    </RelativeLayout>
+
+</layout>

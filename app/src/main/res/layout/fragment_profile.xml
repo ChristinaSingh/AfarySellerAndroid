@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="profileViewModel"
+            type="com.afaryseller.ui.home.fragment.ProfileViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@drawable/border_new">
+
+            <RelativeLayout
+                android:id="@+id/back_navigation"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/back_icon" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@string/my_profile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/RRtoolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivSeller"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_15sdp"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/blue_circle"
+                    android:src="@drawable/user_default"
+                    android:visibility="visible"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/name"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/e_mail"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/address"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal"
+                        />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/llSeller"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/RRChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtChangePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/change_password"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/RRChangeLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toStartOf="@+id/ivNext"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_centerInParent="true"
+                        >
+                        <TextView
+                            android:id="@+id/txtChangeLang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="@string/change_language"
+                            android:textColor="@color/natural_gray"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtLang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/natural_gray"
+                            android:textSize="@dimen/_10sdp"
+                            android:text="gfg"
+                            android:layout_marginTop="-5dp"
+                            android:fontFamily="@font/poppinsregular"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/ivNext"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/back_right"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"/>
+
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/RRUpdateProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtupdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/update_profile"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtChat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/chat"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRMembership"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtMembership"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/membership_paln"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:id="@+id/rlOrderHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/order_history"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/periodic_report"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/proposal_list_page"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/rechareg_balance"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlNotifyAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:id="@+id/tvNotifyAdmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/notify_admin"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlSubSelle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:id="@+id/tvSubSeller"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/subseller"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/contact_support"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/my_requests"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:id="@+id/txtMyOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:id="@+id/txtWishList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/others"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <RelativeLayout
+                    android:id="@+id/RRprivacyPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtPrivacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/privacy_policy"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRTermsCondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtTerms"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/terms_and_conditions"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_60sdp"
+                    android:background="@drawable/login_border_btn">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:text="@string/logout"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:src="@drawable/left_arrow">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llSubSeller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/RRSubChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtSubChangePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/change_password"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/RRSubChangeLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
+                    android:visibility="visible">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toStartOf="@+id/ivSubNext"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_centerInParent="true"
+                        >
+                        <TextView
+                            android:id="@+id/txtSubChangeLang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="@string/change_language"
+                            android:textColor="@color/natural_gray"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtSubLang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/natural_gray"
+                            android:textSize="@dimen/_10sdp"
+                            android:text="gfg"
+                            android:layout_marginTop="-5dp"
+                            android:fontFamily="@font/poppinsregular"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/ivSubNext"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/back_right"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"/>
+
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/RRSubUpdateProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtSubupdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/update_profile"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRSubChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtSubChat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/chat"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRSubMembership"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtSubMembership"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/membership_paln"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:id="@+id/rlSubOrderHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/order_history"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/contact_support"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/others"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <RelativeLayout
+                    android:id="@+id/RRSubprivacyPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtSubPrivacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/privacy_policy"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRSubTermsCondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtSubTerms"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/terms_and_conditions"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRSubLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_60sdp"
+                    android:background="@drawable/login_border_btn">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:text="@string/logout"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:src="@drawable/left_arrow">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="subSellerProfileViewModel"
+            type="com.afaryseller.ui.subseller.profile.SubSellerProfileViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@drawable/border_new">
+
+            <RelativeLayout
+                android:id="@+id/back_navigation"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/back_icon" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@string/my_profile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/RRtoolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivSeller"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_15sdp"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/blue_circle"
+                    android:src="@drawable/user_default"
+                    android:visibility="visible"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/name"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/e_mail"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/address"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/poppinsregular"
+                        android:singleLine="true"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal"
+                        />
+
+                </LinearLayout>
+
+
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/RRChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtChangePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/change_password"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/RRUpdateProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtupdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/update_profile"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RRDeleteAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtDeleteAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableRight="@drawable/back_right"
+                        android:fontFamily="@font/poppinsregular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="@string/delete_account"
+                        android:textColor="@color/natural_gray"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

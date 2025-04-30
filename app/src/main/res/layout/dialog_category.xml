@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="EditShopViewModel"
+            type="com.afaryseller.ui.editshop.EditShopViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/RRtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/purple_200">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center|center_vertical">
+
+                <RelativeLayout
+                    android:id="@+id/RRback"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/back_icon" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/main_categories"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/add_circle"
+                    android:visibility="invisible"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_category_for_this_product"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_200"
+            android:padding="@dimen/_13sdp"
+            />
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCategory"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/RRtoolbar"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_main_category"/>
+
+
+
+
+
+    </LinearLayout>
+
+</layout>
+
