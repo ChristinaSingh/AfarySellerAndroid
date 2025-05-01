@@ -37,11 +37,14 @@ import com.afaryseller.R;
 import com.afaryseller.core.BaseActivity;
 import com.afaryseller.databinding.ActivitySubSellerSignupBinding;
 import com.afaryseller.retrofit.ApiConstant;
+import com.afaryseller.retrofit.Constant;
 import com.afaryseller.ui.addshop.model.StateModel;
 import com.afaryseller.ui.editprofile.EditProfileAct;
 import com.afaryseller.ui.otp.OtpAct;
+import com.afaryseller.ui.shoplist.ShopModel;
 import com.afaryseller.ui.signup.CityModel;
 import com.afaryseller.ui.signup.CountryModel;
+import com.afaryseller.ui.subseller.updateprofile.UpdateSubSellerProfileAct;
 import com.afaryseller.utility.CountryCodes;
 import com.afaryseller.utility.DataManager;
 import com.bumptech.glide.Glide;
@@ -83,7 +86,7 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
     SubSellerSignupViewModel subSellersignupViewModel;
     double latitude = 0.0, longitude = 0.0;
     int AUTOCOMPLETE_REQUEST_CODE_ADDRESS = 101;
-    String address = "", countryId = "", stateId = "", cityId = "", countryName = "",str_image_path="";
+    String address = "", countryId = "", stateId = "", cityId = "",shopId="", countryName = "",str_image_path="";
     String firebaseToken = "", lang = "", currency = "";
     ArrayList<CountryModel.Result> countryArrayList;
     ArrayList<CityModel.Result> cityArrayList;
@@ -92,6 +95,7 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
     private static final int REQUEST_CAMERA = 1;
     private static final int SELECT_FILE = 2;
     private static final int MY_PERMISSION_CONSTANT = 5;
+    ArrayList<ShopModel.Result>shopArrayList;
 
     Bitmap oneBitmap=null;
     @Override
@@ -111,9 +115,10 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
         countryArrayList = new ArrayList<>();
         stateArrayList = new ArrayList<>();
         cityArrayList = new ArrayList<>();
+        shopArrayList = new ArrayList<>();
 
         setCountryCodeFromLocation();
-
+        getShops();
        /* if (getIntent() != null) {
             lang = getIntent().getStringExtra("lang");
             currency = getIntent().getStringExtra("currency");
@@ -185,6 +190,34 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
 
         subSellersignupViewModel.getAllCountry(SubSellerSignupAct.this);
 
+
+        binding.tvShop.setOnClickListener(v -> {
+
+            if(DataManager.getInstance().getUserData(SubSellerSignupAct.this).getResult().getType().equals(Constant.SUBADMIN)) {
+                if (!shopArrayList.isEmpty())
+                    showDropDownShops(v, binding.tvShop, shopArrayList);
+
+            }
+        });
+
+
+
+    }
+
+    private void getShops() {
+        Map<String,String> headerMap = new HashMap<>();
+        headerMap.put("Authorization","Bearer " +DataManager.getInstance().getUserData(SubSellerSignupAct.this).getResult().getAccessToken());
+        headerMap.put("Accept","application/json");
+
+        HashMap<String,String> map = new HashMap<>();
+        map.put("user_id", DataManager.getInstance().getUserData(SubSellerSignupAct.this).getResult().getId());
+        // map.put("category_id", sub_categary_id);
+        map.put("merchant_id", "1");
+        map.put("seller_register_id", DataManager.getInstance().getUserData(SubSellerSignupAct.this).getResult().getRegisterId());
+        map.put("user_seller_id", DataManager.getInstance().getUserData(SubSellerSignupAct.this).getResult().getId());
+
+        subSellersignupViewModel.getAllShops(SubSellerSignupAct.this,headerMap,map);
+
     }
 
 
@@ -215,10 +248,10 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
 
         } else if (address.equals("")) {
             Toast.makeText(this, getString(R.string.please_select_address), Toast.LENGTH_SHORT).show();
-        } /*else if (countryId.equals("")) {
-            binding.tvSelectCountry.setError(getString(R.string.please_enter_country));
-            binding.tvSelectCountry.setFocusable(true);
-        } else if (stateId.equals("")) {
+        } else if (shopId.equals("")) {
+            Toast.makeText(this, getString(R.string.please_select_shop), Toast.LENGTH_SHORT).show();
+
+        } /*else if (stateId.equals("")) {
             binding.tvState.setError(getString(R.string.please_enter_state));
             binding.tvState.setFocusable(true);
         } else if (cityId.equals("")) {
@@ -441,6 +474,40 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
                         e.printStackTrace();
                     }
                 }
+
+                if(dynamicResponseModel.getApiName()== ApiConstant.GET_ALL_SHOP){
+                    try {
+                        if(dynamicResponseModel.getCode()==200){
+                            Log.e("response get daily close Day===",dynamicResponseModel.getJsonObject().toString());
+                            String stringResponse = dynamicResponseModel.getJsonObject().string();
+                            JSONObject jsonObject = new JSONObject(stringResponse);
+                            if (jsonObject.getString("status").toString().equals("1")) {
+                                ShopModel shopModel = new Gson().fromJson(stringResponse, ShopModel.class);
+                                shopArrayList.clear();
+                                shopArrayList.addAll(shopModel.getResult());
+                                for(int i =0;i<shopArrayList.size();i++){
+                                    if(shopId.equals(shopArrayList.get(i).getShopId())){
+                                        binding.tvShop.setText(shopArrayList.get(i).getName());
+                                    }
+                                }
+
+                            } else if (jsonObject.getString("status").toString().equals("0")) {
+                                shopArrayList.clear();
+                            }
+
+
+
+                        }
+                        else {
+                            Toast.makeText(SubSellerSignupAct.this, dynamicResponseModel.getErrorMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
 
             }
         });
@@ -827,8 +894,11 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
         RequestBody state = RequestBody.create(MediaType.parse("text/plain"),stateId );
         RequestBody city = RequestBody.create(MediaType.parse("text/plain"), cityId);
         RequestBody addresss = RequestBody.create(MediaType.parse("text/plain"),address );
+        RequestBody shop_Id = RequestBody.create(MediaType.parse("text/plain"),shopId );
 
-        subSellersignupViewModel.signupSubSeller(SubSellerSignupAct.this,headerMap,  name,userName,email,password,countryCode,mobile,parent_seller_id,country,state,city,addresss,filePart);
+
+
+        subSellersignupViewModel.signupSubSeller(SubSellerSignupAct.this,headerMap,  name,userName,email,password,countryCode,mobile,parent_seller_id,country,state,city,addresss,shop_Id,filePart);
     }
 
     private static File persistImage(Bitmap bitmap, String name, Context cOntext) {
@@ -849,6 +919,22 @@ public class SubSellerSignupAct extends BaseActivity<ActivitySubSellerSignupBind
 
     }
 
+    private void showDropDownShops(View v, TextView textView, List<ShopModel.Result> stringList) {
+        PopupMenu popupMenu = new PopupMenu(SubSellerSignupAct.this, v);
+        for (int i = 0; i < stringList.size(); i++) {
+            popupMenu.getMenu().add(stringList.get(i).getName());
+        }
+        popupMenu.setOnMenuItemClickListener(menuItem -> {
+            textView.setText(menuItem.getTitle());
+            for (int i = 0; i < stringList.size(); i++) {
+                if(stringList.get(i).getName().equalsIgnoreCase(menuItem.getTitle().toString())) {
+                    shopId = stringList.get(i).getShopId();
+                }
+            }
+            return true;
+        });
+        popupMenu.show();
+    }
 
 
 }

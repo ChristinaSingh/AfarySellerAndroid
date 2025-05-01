@@ -41,6 +41,7 @@ public interface AfarySeller {
                                        @Part("state") RequestBody state,
                                        @Part("city") RequestBody city,
                                        @Part("address") RequestBody address,
+                                       @Part("shop_id") RequestBody shopId,
                                        @Part MultipartBody.Part file);
 
     @FormUrlEncoded
@@ -767,5 +768,12 @@ public interface AfarySeller {
     @FormUrlEncoded
     @POST(ApiConstant.CHANGE_USER_PASSWORD_STATUS)
     Call<ResponseBody> changeUserPasswordStatusApi( @FieldMap Map<String, String> params);
+
+
+
+    @FormUrlEncoded
+    @POST(ApiConstant.GET_PERIODIC_REPORT)
+    Call<ResponseBody> getPeriodicReportApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
+
 
 }

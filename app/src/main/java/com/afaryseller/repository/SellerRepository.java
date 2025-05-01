@@ -194,10 +194,10 @@ public class SellerRepository {
     public void subSellerSignupRepo(Map<String, String> auth,RequestBody name, RequestBody username, RequestBody email,
                                   RequestBody password, RequestBody countryCode, RequestBody mobile,
                                   RequestBody parent_seller_id,RequestBody country,RequestBody state,
-                                  RequestBody city,RequestBody address,
+                                  RequestBody city,RequestBody address,RequestBody shopId,
                                   MultipartBody.Part image) {
         isLoadingData.setValue(true);
-        Call<ResponseBody> call = apiInterface.subSellerSignup(auth,name,username,email,password,countryCode,mobile,parent_seller_id,country,state,city,address,image);
+        Call<ResponseBody> call = apiInterface.subSellerSignup(auth,name,username,email,password,countryCode,mobile,parent_seller_id,country,state,city,address,shopId,image);
         call.enqueue(new Callback<ResponseBody>() {
             @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
             @Override
@@ -4393,6 +4393,51 @@ public class SellerRepository {
 
 
 
+
+
+    public void getPeriodicReportRepo(Map<String, String> auth,HashMap<String,String> map) {
+        isLoadingData.setValue(true);
+        Call<ResponseBody> call = apiInterface.getPeriodicReportApi(auth,map);
+        call.enqueue(new Callback<ResponseBody>() {
+            @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                isLoadingData.setValue(false);
+                DynamicResponseModel dynamicResponseModel;
+                Log.e("url===", response.toString());
+                if (response.code() == 200) {
+                    dynamicResponseModel = new DynamicResponseModel(ApiConstant.GET_PERIODIC_REPORT, response.body(), response.code());
+
+                } else {
+
+                    JSONObject jsonObject;
+                    String message = "";
+                    try {
+                        jsonObject = new JSONObject(response.errorBody().string());
+                        message = jsonObject.getString("error");
+                    } catch (JSONException e) {
+                        message = "";
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        message = "";
+                        e.printStackTrace();
+                    }
+                    dynamicResponseModel = new DynamicResponseModel(
+                            ApiConstant.GET_PERIODIC_REPORT,
+                            response.body(),
+                            response.code());
+                }
+                apiResponseData.setValue(dynamicResponseModel);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                isLoadingData.setValue(false);
+            }
+        });
+    }
 
 
 

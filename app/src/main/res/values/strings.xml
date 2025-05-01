@@ -456,6 +456,9 @@
     <string name="street_landmark">Street/Landmark</string>
     <string name="please_enter_street_landmark">Please enter street/landmark</string>
     <string name="shop_not_asign">shop not asign</string>
+    <string name="total_sale">Total Sale</string>
+    <string name="sale_not_found">sale not found</string>
+    <string name="please_select_shop">Please select shop</string>
 
 
 </resources>

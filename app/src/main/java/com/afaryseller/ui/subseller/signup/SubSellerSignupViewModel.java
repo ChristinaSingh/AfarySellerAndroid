@@ -35,13 +35,13 @@ public class SubSellerSignupViewModel extends BaseViewModel {
                                  Map<String, String> auth, RequestBody name, RequestBody username, RequestBody email,
                                  RequestBody password, RequestBody countryCode, RequestBody mobile,
                                  RequestBody parent_seller_id, RequestBody country, RequestBody state,
-                                 RequestBody city, RequestBody address,
+                                 RequestBody city, RequestBody address,RequestBody shopId,
                                  MultipartBody.Part image){
         if (NetworkAvailablity.checkNetworkStatus(context)) {
             sellerRepository.subSellerSignupRepo( auth, name, username,  email,
                      password,  countryCode,  mobile,
                      parent_seller_id, country, state,
-                     city, address,
+                     city, address,shopId,
                      image);
         } else {
             Toast.makeText(context,"No internet connection", Toast.LENGTH_LONG).show();
@@ -73,7 +73,13 @@ public class SubSellerSignupViewModel extends BaseViewModel {
         }
     }
 
-
+    public void  getAllShops(Context context ,Map<String,String>auth, HashMap<String,String> map){
+        if (NetworkAvailablity.checkNetworkStatus(context)) {
+            sellerRepository.getAllShopRepo(auth,map);
+        } else {
+            Toast.makeText(context,"No internet connection", Toast.LENGTH_LONG).show();
+        }
+    }
 
 
 

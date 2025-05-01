@@ -221,6 +221,9 @@ public class ApiConstant {
     public final static String CHANGE_USER_PASSWORD_STATUS = "password_user_status";
 
 
+    public final static String GET_PERIODIC_REPORT = "get_order_filter";
+
+
 
     // https://technorizen.com/afarycodewebsite/Webservice/?seller_id=137&name=test
 
