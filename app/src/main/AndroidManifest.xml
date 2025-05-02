@@ -278,6 +278,12 @@
             />
 
 
+        <activity android:name=".ui.sellerreport.SellerReportAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

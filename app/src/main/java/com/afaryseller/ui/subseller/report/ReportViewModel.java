@@ -19,8 +19,8 @@ import java.util.Map;
 
 public class ReportViewModel extends BaseViewModel {
     SellerRepository sellerRepository;
-    LiveData<Boolean> isLoading;
-    LiveData<DynamicResponseModel> isResponse;
+    public LiveData<Boolean> isLoading;
+    public LiveData<DynamicResponseModel> isResponse;
 
     public ReportViewModel() {
     }
@@ -40,6 +40,16 @@ public class ReportViewModel extends BaseViewModel {
         }
     }
 
+
+
+
+    public void getSellerPeriodicReport(Context context, Map<String,String> auth, HashMap<String, String> map) {
+        if (NetworkAvailablity.checkNetworkStatus(context)) {
+            sellerRepository.getSellerPeriodicReportRepo(auth,map);
+        } else {
+            Toast.makeText(context, "No internet connection", Toast.LENGTH_LONG).show();
+        }
+    }
 
 
 }

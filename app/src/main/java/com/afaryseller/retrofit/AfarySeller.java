@@ -776,4 +776,9 @@ public interface AfarySeller {
     Call<ResponseBody> getPeriodicReportApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
 
 
+    @FormUrlEncoded
+    @POST(ApiConstant.GET_SELLER_PERIODIC_REPORT)
+    Call<ResponseBody> getSellerPeriodicReportApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
+
+
 }

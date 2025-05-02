@@ -47,6 +47,7 @@ import com.afaryseller.ui.editprofile.EditProfileAct;
 import com.afaryseller.ui.membershipplan.CurrentMemberShipPlanAct;
 import com.afaryseller.ui.notifyadmin.NotifyAdminAct;
 import com.afaryseller.ui.onlineorderhistory.onlineOrderHistoryAct;
+import com.afaryseller.ui.sellerreport.SellerReportAct;
 import com.afaryseller.ui.splash.SplashAct;
 import com.afaryseller.ui.splash.WebViewAct;
 import com.afaryseller.ui.subseller.changepassword.SubSellerChangePasswordAct;
@@ -183,6 +184,9 @@ public class ProfileFragment extends BaseFragment<FragmentProfileBinding, Profil
         binding.tvNotifyAdmin.setOnClickListener(v -> startActivity(new Intent(getActivity(), NotifyAdminAct.class)));
 
         binding.tvSubSeller.setOnClickListener(v -> startActivity(new Intent(getActivity(), SubSellerListAct.class)));
+
+        binding.tvReport.setOnClickListener(v -> startActivity(new Intent(getActivity(), SellerReportAct.class)));
+
 
 
 
