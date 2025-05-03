@@ -781,4 +781,25 @@ public interface AfarySeller {
     Call<ResponseBody> getSellerPeriodicReportApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
 
 
+    @FormUrlEncoded
+    @POST("get_list_shop_filter")
+    Call<ResponseBody> getShopsApi( @FieldMap Map<String, String> params);
+
+
+    @FormUrlEncoded
+    @POST("get_list_sub_seller_filter")
+    Call<ResponseBody> getSubSellerShopsApi( @FieldMap Map<String, String> params);
+
+
+    @FormUrlEncoded
+    @POST("get_country_wise_shop_list_by_seller")
+    Call<ResponseBody> getSubSellerShopsCountryWiseApi( @FieldMap Map<String, String> params);
+
+
+    @FormUrlEncoded
+    @POST(ApiConstant.SUB_SELLER_ORDER_COUNTER)
+    Call<ResponseBody> getSubSellerOrderCounterApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
+
+
+
 }

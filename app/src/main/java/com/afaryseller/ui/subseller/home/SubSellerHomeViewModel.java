@@ -47,9 +47,9 @@ public class SubSellerHomeViewModel extends BaseViewModel {
     }
 
 
-    public void  getNotificationCounter(Context context ,Map<String,String> headerMap, HashMap<String,String> map){
+    public void  getOrderCounter(Context context ,Map<String,String> headerMap, HashMap<String,String> map){
         if (NetworkAvailablity.checkNetworkStatus(context)) {
-            sellerRepository.getNotificationCounterRepo(headerMap,map);
+            sellerRepository.getSubSellerOrderCounterRepo(headerMap,map);
         } else {
             Toast.makeText(context,"No internet connection", Toast.LENGTH_LONG).show();
         }

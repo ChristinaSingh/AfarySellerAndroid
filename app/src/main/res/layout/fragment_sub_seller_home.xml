@@ -292,7 +292,7 @@
                             android:fontFamily="@font/poppins_bold"
                             android:textSize="@dimen/_12sdp"
                             android:gravity="center"
-                            android:text="32"
+                            android:text=""
                             android:textColor="@color/red"
                             android:layout_width="@dimen/_30sdp"
                             android:layout_height="@dimen/_30sdp"

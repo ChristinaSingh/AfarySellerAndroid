@@ -459,6 +459,14 @@
     <string name="total_sale">Total Sale</string>
     <string name="sale_not_found">sale not found</string>
     <string name="please_select_shop">Please select shop</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="advance_criteria">Advance \ncriteria</string>
+    <string name="by_store">By Store</string>
+    <string name="by_sub_seller">"By Sub-seller"</string>
+    <string name="store">Store</string>
+    <string name="country_by_store">Country by store</string>
+    <string name="store_country_wise">Store Country wise</string>
 
 
 </resources>

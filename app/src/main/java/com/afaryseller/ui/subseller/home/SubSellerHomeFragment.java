@@ -125,6 +125,29 @@ public class SubSellerHomeFragment extends BaseFragment<FragmentSubSellerHomeBin
 
     }
 
+    private void callOrderCounter() {
+        Map<String, String> headerMap = new HashMap<>();
+        headerMap.put("Authorization", "Bearer " + DataManager.getInstance().getUserData(getActivity()).getResult().getAccessToken());
+        //  headerMap.put("Accept","application/json");
+
+        HashMap<String, String> map = new HashMap<>();
+        map.put("sub_seller_id", DataManager.getInstance().getUserData(requireActivity()).getResult().getSub_seller_id());
+        map.put("shop_id", SessionManager.readString(requireActivity(), Constant.shopId, ""));
+        map.put("user_seller_id", DataManager.getInstance().getUserData(getActivity()).getResult().getId());
+
+        homeViewModel.getOrderCounter(getActivity(), headerMap, map);
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     public void observeResponse() {
@@ -140,6 +163,8 @@ public class SubSellerHomeFragment extends BaseFragment<FragmentSubSellerHomeBin
 
                             if (jsonObject.getString("status").toString().equals("1")) {
                                 BannerModal1 bannerModal1 = new Gson().fromJson(stringResponse, BannerModal1.class);
+
+                                callOrderCounter();
                                 binding.imageSlider.setVisibility(View.VISIBLE);
                                 for (int i = 0; bannerModal1.getResult().size() > i; i++) {
                                     banner_array_list.add(bannerModal1.getResult().get(i).image);
@@ -171,6 +196,28 @@ public class SubSellerHomeFragment extends BaseFragment<FragmentSubSellerHomeBin
                 }
 
 
+                if (dynamicResponseModel.getApiName() == ApiConstant.SUB_SELLER_ORDER_COUNTER) {
+                    try {
+                        if (dynamicResponseModel.getCode() == 200) {
+                            Log.e("response===", dynamicResponseModel.getJsonObject().toString());
+                            String stringResponse = dynamicResponseModel.getJsonObject().string();
+                            JSONObject jsonObject = new JSONObject(stringResponse);
+
+                            if (jsonObject.getBoolean("status")==true) {
+                                binding.tvCount.setVisibility(View.VISIBLE);
+                                binding.tvCount.setText(jsonObject.getString("count")+"");
+                            } else  {
+                                binding.tvCount.setVisibility(View.GONE);
+                            }
+
+                        } else {
+                            Toast.makeText(getActivity(), dynamicResponseModel.getErrorMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
 
 
 

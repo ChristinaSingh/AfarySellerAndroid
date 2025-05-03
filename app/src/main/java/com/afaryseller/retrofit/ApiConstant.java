@@ -225,6 +225,7 @@ public class ApiConstant {
 
     public final static String GET_SELLER_PERIODIC_REPORT = "get_order_filter";
 
+    public final static String SUB_SELLER_ORDER_COUNTER = "count_active_bookings_by_seller";
 
 
     // https://technorizen.com/afarycodewebsite/Webservice/?seller_id=137&name=test

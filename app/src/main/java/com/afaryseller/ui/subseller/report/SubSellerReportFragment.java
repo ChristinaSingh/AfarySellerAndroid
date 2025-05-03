@@ -1,5 +1,6 @@
 package com.afaryseller.ui.subseller.report;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ import com.afaryseller.ui.bookedorder.OrderFragment;
 import com.afaryseller.ui.bookedorder.OrderListener;
 import com.afaryseller.ui.bookedorder.OrderModel;
 import com.afaryseller.ui.bookedorder.OrderViewModel;
+import com.afaryseller.ui.sellerreport.SellerReportAct;
 import com.afaryseller.utility.DataManager;
 import com.afaryseller.utility.SessionManager;
 import com.google.gson.Gson;
@@ -30,6 +32,7 @@ import com.google.gson.Gson;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,6 +41,7 @@ public class SubSellerReportFragment extends BaseFragment<OrderFragmentBinding, 
     ReportViewModel reportViewModel;
     ReportAdapter adapter;
     ArrayList<OrderModel.Result> arrayList;
+    private String startDate="",endDate="";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -69,10 +73,26 @@ public class SubSellerReportFragment extends BaseFragment<OrderFragmentBinding, 
 
        // binding.RRback.setOnClickListener(v -> getActivity().onBackPressed());
 
-        callGetReport();
+        startDate = DataManager.currentDate();
+        endDate = DataManager.currentDate();
+        binding.tvStartDate.setText(startDate);
+        binding.tvEndDate.setText(endDate);
+
+
+        binding.cardStartDate.setOnClickListener(v->{
+            showDatePickerDialog();
+        });
+
+        binding.cardEndDate.setOnClickListener(v->{
+            showDatePickerDialog22();
+        });
+
+        // callGetReport("THIS_MONTH");
+
+        callGetReport(startDate+"TO"+endDate);
     }
 
-    private void callGetReport() {
+    private void callGetReport(String filter) {
         Map<String, String> headerMap = new HashMap<>();
         headerMap.put("Authorization", "Bearer " + DataManager.getInstance().getUserData(getActivity()).getResult().getAccessToken());
         headerMap.put("Accept", "application/json");
@@ -85,7 +105,7 @@ public class SubSellerReportFragment extends BaseFragment<OrderFragmentBinding, 
 
         map.put("sub_seller_id", DataManager.getInstance().getUserData(requireActivity()).getResult().getSub_seller_id());
         map.put("shop_id", SessionManager.readString(requireActivity(), Constant.shopId, ""));
-        map.put("filter","THIS_MONTH");
+        map.put("filter",filter);
 
         reportViewModel.getPeriodicReport(getActivity(), headerMap, map);
     }
@@ -159,4 +179,51 @@ public class SubSellerReportFragment extends BaseFragment<OrderFragmentBinding, 
     public void onOrder(OrderModel.Result result) {
 
     }
+
+
+    private void showDatePickerDialog() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                requireActivity(),
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    // String date = selectedYear  + "-" + (selectedMonth + 1) + "-" + selectedDay;
+                    String date = String.format("%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay);
+                    startDate = date;
+                    binding.tvStartDate.setText(date);
+                    callGetReport(startDate+"TO"+endDate);
+
+                },
+                year, month, day
+        );
+
+        datePickerDialog.show();
+    }
+
+    private void showDatePickerDialog22() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                requireActivity(),
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    // String date = selectedYear  + "-" + (selectedMonth + 1) + "-" + selectedDay;
+                    String date = String.format("%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay);
+                    endDate = date;
+                    binding.tvEndDate.setText(date);
+                    callGetReport(startDate+"TO"+endDate);
+
+                },
+                year, month, day
+        );
+
+        datePickerDialog.show();
+    }
+
+
 }
