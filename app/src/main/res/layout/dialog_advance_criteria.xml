@@ -18,7 +18,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_marginBottom="@dimen/_15sdp">
+                android:layout_margin="@dimen/_15sdp"
+                >
 
 
 
@@ -38,14 +39,9 @@
 
 
 
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginEnd="@dimen/_15sdp">
 
-                    <RadioButton
+
+                    <CheckBox
                         android:id="@+id/rdStore"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -54,7 +50,7 @@
                         android:textSize="@dimen/_12sdp"
                         android:fontFamily="@font/poppinsregular"/>
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rdSubSeller"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -63,7 +59,7 @@
                         android:textSize="@dimen/_12sdp"
                         android:fontFamily="@font/poppinsregular"/>
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rdStoreCountry"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -73,7 +69,26 @@
                         android:fontFamily="@font/poppinsregular"/>
 
 
-                </RadioGroup>
+
+
+
+                <TextView
+                    android:id="@+id/btnFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_shape_capsule"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/filter"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
 
 
 

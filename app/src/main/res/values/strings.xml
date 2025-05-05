@@ -467,6 +467,8 @@
     <string name="store">Store</string>
     <string name="country_by_store">Country by store</string>
     <string name="store_country_wise">Store Country wise</string>
+    <string name="filter">Filter</string>
+    <string name="please_select_atleast_one">Please select atleast one</string>
 
 
 </resources>

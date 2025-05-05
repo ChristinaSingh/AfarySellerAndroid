@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -25,12 +27,16 @@ import com.afaryseller.utility.DataManager;
 import com.afaryseller.utility.SessionManager;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, ReportViewModel> implements OrderListener , AskListener {
@@ -39,6 +45,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
     ReportAdapter adapter;
     ArrayList<OrderModel.Result> arrayList;
     private String startDate="",endDate="";
+    JSONArray jsonArray = new JSONArray();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -129,6 +136,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
                                 binding.tvNotFound.setVisibility(View.GONE);
                                 arrayList.clear();
                                 arrayList.addAll(model.getResult());
+                                jsonArray = new JSONArray();
 
                                 if(!arrayList.isEmpty()){
                                     binding.cardSale.setVisibility(View.VISIBLE);
@@ -138,6 +146,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
                                     binding.textAmount.setText("FCFA"+jsonObject.getString("total_amount"));
                                 }
                                 else {
+                                    jsonArray = new JSONArray();
                                     binding.cardSale.setVisibility(View.GONE);
                                 //    binding.cardStartDate.setVisibility(View.GONE);
                                 //    binding.cardEndDate.setVisibility(View.GONE);
@@ -146,6 +155,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
                                 adapter.notifyDataSetChanged();
                             } else if (jsonObject.getString("status").toString().equals("0")) {
                                 // binding.tvNotFount.setVisibility(View.VISIBLE);
+                                jsonArray = new JSONArray();
                                 binding.tvNotFound.setVisibility(View.VISIBLE);
                                 binding.cardSale.setVisibility(View.GONE);
                               //  binding.cardStartDate.setVisibility(View.GONE);
@@ -241,32 +251,44 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
         mDialog.setCancelable(true);
         mDialog.setCanceledOnTouchOutside(true);
 
-        RadioButton rdStore = mDialog.findViewById(R.id.rdStore);
-        RadioButton rdSubSeller = mDialog.findViewById(R.id.rdSubSeller);
-        RadioButton rdStoreCountry = mDialog.findViewById(R.id.rdStoreCountry);
+        CheckBox rdStore = mDialog.findViewById(R.id.rdStore);
+        CheckBox rdSubSeller = mDialog.findViewById(R.id.rdSubSeller);
+        CheckBox rdStoreCountry = mDialog.findViewById(R.id.rdStoreCountry);
+        TextView btnFilter = mDialog.findViewById(R.id.btnFilter);
 
 
+        btnFilter.setOnClickListener(v -> {
+            if(jsonArray.length()>0) {
+                Log.e("filter json array===", jsonArray.toString());
+                Log.e("unique ids string===", addUniqueIds(jsonArray));
+
+                mDialog.dismiss();
+                callGetReport(startDate + "TO" + endDate, addUniqueIds(jsonArray));
+            }
+            else Toast.makeText(this, getString(R.string.please_select_atleast_one), Toast.LENGTH_SHORT).show();
+
+        });
 
 
         rdStore.setOnClickListener(v -> {
-            mDialog.dismiss();
+            //mDialog.dismiss();
+            rdStore.setChecked(true);
             new StoreBottomSheet(SellerReportAct.this).callBack(this::ask).show(getSupportFragmentManager(), "StoreBottomSheet");
 
         });
 
         rdSubSeller.setOnClickListener(v -> {
-            mDialog.dismiss();
+          //  mDialog.dismiss();
+            rdSubSeller.setChecked(true);
             new SubSellerBottomSheet(SellerReportAct.this).callBack(this::ask).show(getSupportFragmentManager(), "SubSellerBottomSheet");
-
 
         });
 
 
         rdStoreCountry.setOnClickListener(v -> {
-            mDialog.dismiss();
+           // mDialog.dismiss();
+            rdStoreCountry.setChecked(true);
             new ShopCountryWiseBottomSheet(SellerReportAct.this).callBack(this::ask).show(getSupportFragmentManager(), "ShopCountryWiseBottomSheet");
-
-
         });
 
 
@@ -282,17 +304,60 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
 
     @Override
     public void ask(String value, String status) {
-        if(status.equals("store")){
-            callGetReport(startDate+"TO"+endDate,value);
-        }
-        else if(status.equals("subSellerStore")) {
-            callGetReport(startDate+"TO"+endDate,value);
+      try {
+          if(status.equals("store")){
+              JSONObject jsonObject = new JSONObject();
+              jsonObject.put("id", value);
+              jsonArray.put(jsonObject);
 
-        }
-        else {
-            callGetReport(startDate+"TO"+endDate,value);
+             // callGetReport(startDate+"TO"+endDate,value);
 
-        }
+          }
+          else if(status.equals("subSellerStore")) {
+              JSONObject jsonObject = new JSONObject();
+              jsonObject.put("id", value);
+              jsonArray.put(jsonObject);
+             // callGetReport(startDate+"TO"+endDate,value);
+
+          }
+          else {
+              JSONObject jsonObject = new JSONObject();
+              jsonObject.put("id", value);
+              jsonArray.put(jsonObject);
+             // callGetReport(startDate+"TO"+endDate,value);
+
+          }
+      }catch (Exception exception){
+          exception.printStackTrace();
+      }
+
     }
+
+
+    public String addUniqueIds( JSONArray array){
+        String result="";
+        try {
+            Set<String> uniqueIds = new LinkedHashSet<>();
+
+            // Iterate through array and collect unique IDs
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject obj = array.getJSONObject(i);
+                String idStr = obj.optString("id", "");
+                if (!idStr.isEmpty()) {
+                    String[] ids = idStr.split(",");
+                    for (String id : ids) {
+                        uniqueIds.add(id.trim());
+                    }
+                }
+            }
+             result = String.join(",", uniqueIds);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return result;
+
+    }
+
 }
 
