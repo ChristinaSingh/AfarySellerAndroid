@@ -139,6 +139,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
                                 jsonArray = new JSONArray();
 
                                 if(!arrayList.isEmpty()){
+
                                     binding.cardSale.setVisibility(View.VISIBLE);
                                  //   binding.cardStartDate.setVisibility(View.VISIBLE);
                                  //   binding.cardEndDate.setVisibility(View.VISIBLE);
