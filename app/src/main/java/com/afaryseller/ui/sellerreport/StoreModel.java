@@ -44,7 +44,7 @@ public class StoreModel {
         this.data = data;
     }
 
-    public class Datum {
+    public static class Datum {
 
         @SerializedName("id")
         @Expose
