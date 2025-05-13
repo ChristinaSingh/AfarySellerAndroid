@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.ResponseBody;
@@ -123,6 +124,16 @@ public class SubSellerBottomSheet extends BottomSheetDialogFragment implements S
                     if (object.getBoolean("status")==true) {
                         SubSellerStoreModel data = new Gson().fromJson(responseData, SubSellerStoreModel.class);
                         arrayList.clear();
+
+                        SubSellerStoreModel.Datum allShop = new SubSellerStoreModel.Datum();
+                        allShop.setId("0");
+                        allShop.setShopId("0");
+
+                        allShop.setName("All Sub-Seller");
+
+                        arrayList.add(allShop); // Add at first positio
+
+
                         arrayList.addAll(data.getData());
                         adapter.notifyDataSetChanged();
 
@@ -155,6 +166,31 @@ public class SubSellerBottomSheet extends BottomSheetDialogFragment implements S
     @Override
     public void onStore(String id) {
         dismiss();
-        listener.ask(id,"subSellerStore");
+       // listener.ask(id,"");
+        if(id.equals("0")){
+            listener.ask(commaSepShopId(arrayList), "subSellerStore");
+        }
+        else listener.ask(id, "subSellerStore");
     }
+
+    public String commaSepShopId(List<SubSellerStoreModel.Datum> arrayList){
+        StringBuilder shopIds = new StringBuilder();
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            if(!arrayList.get(i).getId().equals("0")) {
+                shopIds.append(arrayList.get(i).getShopId()); // or arrayList.get(i).shop_id if it's a public field
+
+                if (i < arrayList.size() - 1) {
+                    shopIds.append(",");
+                }
+            }
+        }
+
+        Log.e("comma sep shop id==",shopIds+"");
+
+        return shopIds+"";
+
+    }
+
+
 }

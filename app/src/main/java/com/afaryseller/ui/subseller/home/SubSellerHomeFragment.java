@@ -204,8 +204,9 @@ public class SubSellerHomeFragment extends BaseFragment<FragmentSubSellerHomeBin
                             JSONObject jsonObject = new JSONObject(stringResponse);
 
                             if (jsonObject.getBoolean("status")==true) {
-                                binding.tvCount.setVisibility(View.VISIBLE);
-                                binding.tvCount.setText(jsonObject.getString("count")+"");
+                               if(jsonObject.getString("count").equals("0")) binding.tvCount.setVisibility(View.GONE);
+                                  else{ binding.tvCount.setVisibility(View.VISIBLE);
+                                binding.tvCount.setText(jsonObject.getString("count")+"");}
                             } else  {
                                 binding.tvCount.setVisibility(View.GONE);
                             }

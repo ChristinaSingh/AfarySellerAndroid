@@ -42,7 +42,7 @@ public class SubSellerStoreModel {
         this.data = data;
     }
 
-    public class Datum {
+    public static class Datum {
 
         @SerializedName("id")
         @Expose
