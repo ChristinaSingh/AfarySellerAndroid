@@ -284,6 +284,11 @@
             />
 
 
+        <activity android:name=".ui.subseller.login.SubSellerForgotPasswordAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

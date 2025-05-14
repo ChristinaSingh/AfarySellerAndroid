@@ -263,7 +263,7 @@
                     android:textColor="#2F3030"
                     android:textSize="@dimen/_13sdp"
                     android:textStyle="bold"
-                    android:visibility="gone"/>
+                    android:visibility="visible"/>
 
 
                 <RelativeLayout

@@ -80,7 +80,7 @@ public class SubSellerLoginAct extends BaseActivity<ActivitySubSellerLoginBindin
 
         });
 
-        //  binding.forgotPassword.setOnClickListener(view -> startActivity(new Intent(LoginAct.this, ForgotPassword.class)));
+          binding.forgotPassword.setOnClickListener(view -> startActivity(new Intent(SubSellerLoginAct.this, SubSellerForgotPasswordAct.class)));
 
 
         binding.tvSubSeller.setOnClickListener(view -> {

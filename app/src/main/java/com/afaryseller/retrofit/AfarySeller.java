@@ -801,5 +801,10 @@ public interface AfarySeller {
     Call<ResponseBody> getSubSellerOrderCounterApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
 
 
+    @FormUrlEncoded
+    @POST("forgot_password_sub_seller")
+    Call<ResponseBody> forgotPasswordSubSellerApi( @FieldMap Map<String, String> params);
+
+
 
 }
