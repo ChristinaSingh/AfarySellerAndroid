@@ -149,7 +149,8 @@ public class ProfileFragment extends BaseFragment<FragmentProfileBinding, Profil
 
         binding.txtSubChangePassword.setOnClickListener(v ->{
                 startActivity(new Intent(getActivity(), SubSellerChangePasswordAct.class)
-                        .putExtra("subSellerId",subSellerId));
+                        .putExtra("subSellerId",subSellerId)
+                        .putExtra("userType","seller"));
         });
 
 

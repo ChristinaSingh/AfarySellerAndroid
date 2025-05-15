@@ -20,6 +20,7 @@ import com.afaryseller.databinding.FragmentSubSellerProfileBinding;
 import com.afaryseller.retrofit.ApiConstant;
 import com.afaryseller.retrofit.Constant;
 import com.afaryseller.ui.splash.SplashAct;
+import com.afaryseller.ui.subseller.changepassword.SubSellerChangePasswordAct;
 import com.afaryseller.utility.DataManager;
 import com.afaryseller.utility.SessionManager;
 import com.bumptech.glide.Glide;
@@ -60,11 +61,16 @@ public class SubSellerProfileFragment extends BaseFragment<FragmentSubSellerProf
         binding.txtupdate.setOnClickListener(v -> startActivity(new Intent(SubSellerProfileAct.this, UpdateSubSellerProfileAct.class)
                 .putExtra("subSellerId",subSellerId)));
 
+                binding.txtDeleteAccount.setOnClickListener(v -> deleteAccountDialog());
 
-        binding.txtChangePassword.setOnClickListener(v -> startActivity(new Intent(SubSellerProfileAct.this, SubSellerChangePasswordAct.class)
-                .putExtra("subSellerId",subSellerId)));
+         */
 
-        binding.txtDeleteAccount.setOnClickListener(v -> deleteAccountDialog());*/
+
+        binding.txtChangePassword.setOnClickListener(v -> startActivity(new Intent(requireActivity(), SubSellerChangePasswordAct.class)
+                .putExtra("subSellerId",subSellerId)
+                .putExtra("userType", "sub-seller")));
+
+
 
         observeLoader();
         observeResponse();

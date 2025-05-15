@@ -64,12 +64,16 @@ public class SubSellerProfileAct extends BaseActivity<ActivitySubSellerProfileBi
         binding.backNavigation.setOnClickListener(v -> finish());
 
 
-        binding.txtupdate.setOnClickListener(v -> startActivity(new Intent(SubSellerProfileAct.this, UpdateSubSellerProfileAct.class)
+        binding.txtUpdate.setOnClickListener(v -> startActivity(new Intent(SubSellerProfileAct.this, UpdateSubSellerProfileAct.class)
                 .putExtra("subSellerId",subSellerId)));
 
 
-        binding.txtChangePassword.setOnClickListener(v -> startActivity(new Intent(SubSellerProfileAct.this, SubSellerChangePasswordAct.class)
-                .putExtra("subSellerId",subSellerId)));
+        binding.txtChangePassword.setOnClickListener(v ->
+        {
+            startActivity(new Intent(SubSellerProfileAct.this, SubSellerChangePasswordAct.class)
+                    .putExtra("subSellerId", subSellerId)
+                    .putExtra("userType", "seller"));
+        });
 
         binding.txtDeleteAccount.setOnClickListener(v -> deleteAccountDialog());
     }

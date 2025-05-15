@@ -2,6 +2,7 @@ package com.afaryseller.ui.subseller.changepassword;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -24,7 +25,7 @@ public class SubSellerChangePasswordAct extends BaseActivity<ActivitySubSellerCh
     public String TAG = "SubSellerChangePasswordAct";
     ActivitySubSellerChangePasswordBinding binding;
     SubSellerChangePasswordViewModel subSellerChangePasswordViewModel;
-    String subSellerId="";
+    String subSellerId="",userType="";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,16 @@ public class SubSellerChangePasswordAct extends BaseActivity<ActivitySubSellerCh
 
         if(getIntent()!=null){
             subSellerId = getIntent().getStringExtra("subSellerId");
+            userType = getIntent().getStringExtra("userType");
+            Log.e("user type====",userType);
+
+            if(userType.equals("sub-seller")){
+                binding.rlOldPass.setVisibility(View.VISIBLE);
+            }
+            else {
+                binding.rlOldPass.setVisibility(View.GONE);
+
+            }
         }
 
         binding.RRChangePass.setOnClickListener(view -> validation());
@@ -52,37 +63,73 @@ public class SubSellerChangePasswordAct extends BaseActivity<ActivitySubSellerCh
     }
 
     public void validation() {
-        if (binding.oldPassword.getText().toString().equals("")) {
-            binding.oldPassword.setError(getString(R.string.required));
-            binding.oldPassword.setFocusable(true);
-        }
-        else if (binding.newPassword.getText().toString().equals("")) {
-            binding.newPassword.setError(getString(R.string.required));
-            binding.newPassword.setFocusable(true);
-        }
-        else if (binding.confirmPasswordd.getText().toString().equals("")) {
-            binding.confirmPasswordd.setError(getString(R.string.required));
-            binding.confirmPasswordd.setFocusable(true);
-        }
-        else if (!binding.confirmPasswordd.getText().toString().equals(binding.newPassword.getText().toString())) {
-            binding.confirmPasswordd.setError(getString(R.string.password_does_not_matched));
-            binding.confirmPasswordd.setFocusable(true);
-        }
 
-        else {
-            Map<String,String> headerMap = new HashMap<>();
-            headerMap.put("Authorization","Bearer " + DataManager.getInstance().getUserData(SubSellerChangePasswordAct.this).getResult().getAccessToken());
-            headerMap.put("Accept","application/json");
-            HashMap<String,String> map = new HashMap<>();
+       if(userType.equals("sub-seller")){
+           if (binding.oldPassword.getText().toString().equals("")) {
+               binding.oldPassword.setError(getString(R.string.required));
+               binding.oldPassword.setFocusable(true);
+           }
+           else if (binding.newPassword.getText().toString().equals("")) {
+               binding.newPassword.setError(getString(R.string.required));
+               binding.newPassword.setFocusable(true);
+           }
+           else if (binding.confirmPasswordd.getText().toString().equals("")) {
+               binding.confirmPasswordd.setError(getString(R.string.required));
+               binding.confirmPasswordd.setFocusable(true);
+           }
+           else if (!binding.confirmPasswordd.getText().toString().equals(binding.newPassword.getText().toString())) {
+               binding.confirmPasswordd.setError(getString(R.string.password_does_not_matched));
+               binding.confirmPasswordd.setFocusable(true);
+           }
 
-            map.put("sub_seller_id",subSellerId);
-            map.put("old_password",binding.oldPassword.getText().toString());
-            map.put("password",binding.newPassword.getText().toString());
-            map.put("confirm_password",binding.confirmPasswordd.getText().toString());
+           else {
+               Map<String,String> headerMap = new HashMap<>();
+               headerMap.put("Authorization","Bearer " + DataManager.getInstance().getUserData(SubSellerChangePasswordAct.this).getResult().getAccessToken());
+               headerMap.put("Accept","application/json");
+               HashMap<String,String> map = new HashMap<>();
 
-            Log.e(TAG, "sub seller change password  Request ==="+ map);
-            subSellerChangePasswordViewModel.subSellerChangePassword(SubSellerChangePasswordAct.this,headerMap,map);
-        }
+               map.put("sub_seller_id",subSellerId);
+               map.put("old_password",binding.oldPassword.getText().toString());
+               map.put("password",binding.newPassword.getText().toString());
+               map.put("confirm_password",binding.confirmPasswordd.getText().toString());
+               map.put("user_type",userType);
+
+               Log.e(TAG, "sub seller change password  Request ==="+ map);
+               subSellerChangePasswordViewModel.subSellerChangePassword(SubSellerChangePasswordAct.this,headerMap,map);
+           }
+       }else {
+
+           if (binding.newPassword.getText().toString().equals("")) {
+               binding.newPassword.setError(getString(R.string.required));
+               binding.newPassword.setFocusable(true);
+           }
+           else if (binding.confirmPasswordd.getText().toString().equals("")) {
+               binding.confirmPasswordd.setError(getString(R.string.required));
+               binding.confirmPasswordd.setFocusable(true);
+           }
+           else if (!binding.confirmPasswordd.getText().toString().equals(binding.newPassword.getText().toString())) {
+               binding.confirmPasswordd.setError(getString(R.string.password_does_not_matched));
+               binding.confirmPasswordd.setFocusable(true);
+           }
+
+           else {
+               Map<String,String> headerMap = new HashMap<>();
+               headerMap.put("Authorization","Bearer " + DataManager.getInstance().getUserData(SubSellerChangePasswordAct.this).getResult().getAccessToken());
+               headerMap.put("Accept","application/json");
+               HashMap<String,String> map = new HashMap<>();
+
+               map.put("sub_seller_id",subSellerId);
+               map.put("old_password",binding.oldPassword.getText().toString());
+               map.put("password",binding.newPassword.getText().toString());
+               map.put("confirm_password",binding.confirmPasswordd.getText().toString());
+               map.put("user_type",userType);
+
+               Log.e(TAG, "sub seller change password  Request ==="+ map);
+               subSellerChangePasswordViewModel.subSellerChangePassword(SubSellerChangePasswordAct.this,headerMap,map);
+           }
+       }
+
+
 
 
     }
