@@ -42,9 +42,9 @@ import java.util.TreeSet;
 public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, ReportViewModel> implements OrderListener , AskListener {
     ActivitySellerReportBinding binding;
     ReportViewModel reportViewModel;
-    ReportAdapter adapter;
-    ArrayList<OrderModel.Result> arrayList;
-    private String startDate="",endDate="";
+    PeriodicReportAdapter adapter;
+    ArrayList<PeriodicReportModel.Result> arrayList;
+    private String startDate="",endDate="",groupBy="sub_seller";
     JSONArray jsonArray = new JSONArray();
 
     @Override
@@ -66,7 +66,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
         }*/
         arrayList = new ArrayList<>();
 
-        adapter = new ReportAdapter(SellerReportAct.this, arrayList, SellerReportAct.this);
+        adapter = new PeriodicReportAdapter(SellerReportAct.this, arrayList, SellerReportAct.this);
         binding.rvReports.setAdapter(adapter);
 
 
@@ -114,6 +114,9 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
      //   map.put("sub_seller_id", DataManager.getInstance().getUserData(SellerReportAct.this).getResult().getSub_seller_id());
         map.put("shop_id", shopId);
         map.put("filter",filter);
+        map.put("group_by",groupBy);
+
+
 
         reportViewModel.getSellerPeriodicReport(SellerReportAct.this, headerMap, map);
     }
@@ -124,7 +127,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
         reportViewModel.isResponse.observe(SellerReportAct.this, dynamicResponseModel -> {
             if (dynamicResponseModel.getJsonObject() != null) {
                 pauseProgressDialog();
-                if (dynamicResponseModel.getApiName() == ApiConstant.GET_SELLER_PERIODIC_REPORT) {
+                if (dynamicResponseModel.getApiName() == ApiConstant.GET_SELLER_PERIODIC_REPORT_NEW) {
                     try {
                         if (dynamicResponseModel.getCode() == 200) {
                             Log.e("response===", dynamicResponseModel.getJsonObject().toString());
@@ -132,7 +135,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
                             JSONObject jsonObject = new JSONObject(stringResponse);
                             if (jsonObject.getString("status").toString().equals("1")) {
                                 // binding.tvNotFount.setVisibility(View.GONE);
-                                OrderModel model = new Gson().fromJson(stringResponse, OrderModel.class);
+                                PeriodicReportModel model = new Gson().fromJson(stringResponse, PeriodicReportModel.class);
                                 binding.tvNotFound.setVisibility(View.GONE);
                                 arrayList.clear();
                                 arrayList.addAll(model.getResult());
@@ -307,6 +310,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
     public void ask(String value, String status) {
       try {
           if(status.equals("store")){
+              groupBy = "shop";
               JSONObject jsonObject = new JSONObject();
               jsonObject.put("id", value);
               jsonArray.put(jsonObject);
@@ -315,6 +319,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
 
           }
           else if(status.equals("subSellerStore")) {
+              groupBy = "sub_seller";
               JSONObject jsonObject = new JSONObject();
               jsonObject.put("id", value);
               jsonArray.put(jsonObject);
@@ -322,6 +327,7 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
 
           }
           else {
+              groupBy = "shop";
               JSONObject jsonObject = new JSONObject();
               jsonObject.put("id", value);
               jsonArray.put(jsonObject);

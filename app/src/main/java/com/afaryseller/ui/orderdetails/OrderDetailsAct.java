@@ -348,6 +348,9 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
         map.put("reason", reason);
         map.put("user_seller_id", DataManager.getInstance().getUserData(OrderDetailsAct.this).getResult().getId());
         map.put("seller_register_id", DataManager.getInstance().getUserData(OrderDetailsAct.this).getResult().getRegisterId());
+        if (DataManager.getInstance().getUserData(OrderDetailsAct.this).getResult().getType().equals(Constant.SUBADMIN))
+        map.put("sub_seller_id", "");
+        else  map.put("sub_seller_id", DataManager.getInstance().getUserData(OrderDetailsAct.this).getResult().getSub_seller_id());
 
 
         Log.e("orderAcceptDecline====", map.toString());

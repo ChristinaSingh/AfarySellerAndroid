@@ -807,4 +807,9 @@ public interface AfarySeller {
 
 
 
+    @FormUrlEncoded
+    @POST(ApiConstant.GET_SELLER_PERIODIC_REPORT_NEW)
+    Call<ResponseBody> getSellerPeriodicReportNewResponseApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
+
+
 }

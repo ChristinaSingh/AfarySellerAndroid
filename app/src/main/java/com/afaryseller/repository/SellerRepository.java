@@ -4531,4 +4531,52 @@ public class SellerRepository {
     }
 
 
+
+
+    public void getSellerPeriodicReportNewResponseRepo(Map<String, String> auth,HashMap<String,String> map) {
+        isLoadingData.setValue(true);
+        Call<ResponseBody> call = apiInterface.getSellerPeriodicReportNewResponseApi(auth,map);
+        call.enqueue(new Callback<ResponseBody>() {
+            @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                isLoadingData.setValue(false);
+                DynamicResponseModel dynamicResponseModel;
+                Log.e("url===", response.toString());
+                if (response.code() == 200) {
+                    dynamicResponseModel = new DynamicResponseModel(ApiConstant.GET_SELLER_PERIODIC_REPORT_NEW, response.body(), response.code());
+
+                } else {
+
+                    JSONObject jsonObject;
+                    String message = "";
+                    try {
+                        jsonObject = new JSONObject(response.errorBody().string());
+                        message = jsonObject.getString("error");
+                    } catch (JSONException e) {
+                        message = "";
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        message = "";
+                        e.printStackTrace();
+                    }
+                    dynamicResponseModel = new DynamicResponseModel(
+                            ApiConstant.GET_SELLER_PERIODIC_REPORT_NEW,
+                            response.body(),
+                            response.code());
+                }
+                apiResponseData.setValue(dynamicResponseModel);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                isLoadingData.setValue(false);
+            }
+        });
+    }
+
+
+
 }

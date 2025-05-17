@@ -45,7 +45,7 @@ public class ReportViewModel extends BaseViewModel {
 
     public void getSellerPeriodicReport(Context context, Map<String,String> auth, HashMap<String, String> map) {
         if (NetworkAvailablity.checkNetworkStatus(context)) {
-            sellerRepository.getSellerPeriodicReportRepo(auth,map);
+            sellerRepository.getSellerPeriodicReportNewResponseRepo(auth,map);
         } else {
             Toast.makeText(context, "No internet connection", Toast.LENGTH_LONG).show();
         }
