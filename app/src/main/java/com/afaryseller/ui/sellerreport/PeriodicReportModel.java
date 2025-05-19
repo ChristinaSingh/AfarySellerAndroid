@@ -45,7 +45,7 @@ public class PeriodicReportModel {
     }
 
 
-    public class Result {
+    public static class Result {
 
         @SerializedName("id")
         @Expose
@@ -59,6 +59,16 @@ public class PeriodicReportModel {
         @SerializedName("order_details")
         @Expose
         private List<OrderDetail> orderDetails;
+
+        private String reportTotal="0";
+
+        public String getReportTotal() {
+            return reportTotal;
+        }
+
+        public void setReportTotal(String reportTotal) {
+            this.reportTotal = reportTotal;
+        }
 
         public String getId() {
             return id;

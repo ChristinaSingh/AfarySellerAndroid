@@ -42,7 +42,7 @@ public class PeriodicListAdapter extends RecyclerView.Adapter<PeriodicListAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.binding.orderId.setText(arrayList.get(position).getOrderId());
         holder.binding.tvDate.setText(DataManager.formatDate(arrayList.get(position).getDateTime()));
-        //  holder.binding.orderPrice.setText("FCFA"+ arrayList.get(position).getTotalAmount());
+        holder.binding.orderStatus.setText(arrayList.get(position).getStatus());
 
         try {
             //  double taxN1 = Double.parseDouble(arrayList.get(position).getTaxN1());

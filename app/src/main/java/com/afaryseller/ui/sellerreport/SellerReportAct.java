@@ -138,8 +138,35 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
                                 PeriodicReportModel model = new Gson().fromJson(stringResponse, PeriodicReportModel.class);
                                 binding.tvNotFound.setVisibility(View.GONE);
                                 arrayList.clear();
+                                 try {
+                                     for (int i=0;i<model.getResult().size();i++){
+                                         int n4=0;
+                                         for (int j=0;j<model.getResult().get(i).getOrderDetails().size();j++){
+                                             int n1=0;
+                                             if (model.getResult().get(i).getOrderDetails().get(j).getTotalAmount().contains(",")) n1 = parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTotalAmount().replace(",",""));
+                                             else n1 = parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTotalAmount());
+
+                                             int n2 = parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTaxN1())
+                                                     + parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTaxN2())
+                                                     + parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getPlatFormsFees())
+                                                     + parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getDeliveryCharges());
+                                             int n3 = n1 - n2;
+
+                                              n3 = n3+ n4;
+                                              n4 = n3;
+                                             model.getResult().get(i).setReportTotal(String.valueOf(n3));
+                                         }
+                                     }
+
+                                 }catch (Exception e){
+                                     e.printStackTrace();
+                                 }
+
+
+
                                 arrayList.addAll(model.getResult());
-                                jsonArray = new JSONArray();
+
+                                 jsonArray = new JSONArray();
 
                                 if(!arrayList.isEmpty()){
 
@@ -365,6 +392,13 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
         return result;
 
     }
+
+    private int parseFrenchNumber(String number) {
+        // Remove the commas and parse to an integer
+        String cleanedNumber = number.replace(",", "");
+        return Integer.parseInt(cleanedNumber);
+    }
+
 
 }
 

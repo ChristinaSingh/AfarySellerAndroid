@@ -40,6 +40,8 @@ public class PeriodicReportAdapter extends RecyclerView.Adapter<PeriodicReportAd
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.binding.tvName.setText(arrayList.get(position).getName());
         holder.binding.rvPeriodicReport.setAdapter(new PeriodicListAdapter(context, (ArrayList<PeriodicReportModel.Result.OrderDetail>) arrayList.get(position).getOrderDetails()));
+        holder.binding.reportTotal.setText(context.getString(R.string.total) + " FCFA" + arrayList.get(position).getReportTotal());
+
     }
 
     @Override

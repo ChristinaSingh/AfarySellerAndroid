@@ -51,6 +51,12 @@
 
             </RelativeLayout>
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
 
             <TextView
                 android:id="@+id/orderPrice"
@@ -70,17 +76,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:drawablePadding="@dimen/_5sdp"
                 android:fontFamily="@font/poppinsregular"
-                android:layoutDirection="rtl"
                 android:padding="@dimen/_4sdp"
                 android:text=""
                 android:textColor="#000"
                 android:textSize="@dimen/_12sdp"
+                android:layout_alignParentEnd="true"
                 android:textStyle="bold"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:textAllCaps="true"/>
-
+</RelativeLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

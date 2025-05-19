@@ -29,6 +29,27 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_report_list"/>
 
+
+
+
+        <TextView
+            android:id="@+id/reportTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:fontFamily="@font/poppinsregular"
+            android:text=""
+            android:textColor="@color/red"
+            android:textSize="@dimen/_14sdp"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:visibility="visible"
+            android:textAllCaps="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+
+
     </LinearLayout>
 
 
