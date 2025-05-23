@@ -936,7 +936,13 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
         if (tag.equals("Cancel")) {
             orderStatus = "Cancelled";
             type = "Single";
-            dialogCancelOrderReason("Cancelled", type, product.getOrderId());
+           // dialogCancelOrderReason("Cancelled", type, product.getOrderId());
+
+
+                dialogSelectCancelOrderReason(orderStatus, type, product.getOrderId());
+
+
+
         } else {
             alertOrderReturn(product.getOrderId());
         }

@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,7 +39,7 @@ import java.util.Map;
 public class OrderFragment extends BaseFragment<OrderFragmentBinding, OrderViewModel> implements OrderListener {
     OrderFragmentBinding binding;
     OrderViewModel orderViewModel;
-    String catId = "";
+    String catId = "",reason = "";
     OrderAdapter adapter;
     ArrayList<OrderModel.Result> arrayList;
 
@@ -202,8 +204,75 @@ public class OrderFragment extends BaseFragment<OrderFragmentBinding, OrderViewM
     @Override
     public void onOrder(OrderModel.Result result) {
         //  alertCancelOrder("Cancelled",result.getOrderId(),result.getUserId());
-        dialogCancelOrderReason("Cancelled", "All", result.getOrderId(), result.getUserId());
+       // dialogCancelOrderReason("Cancelled", "All", result.getOrderId(), result.getUserId());
 
+        dialogSelectCancelOrderReason("Cancelled", "All", result.getOrderId(), result.getUserId());
+
+    }
+    private void dialogSelectCancelOrderReason(String orderStatus, String type, String id,String userId) {
+
+        Dialog mDialog = new Dialog(requireActivity());
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mDialog.setContentView(R.layout.dialog_select_cancel_reason);
+        mDialog.setCancelable(false);
+        mDialog.setCanceledOnTouchOutside(false);
+
+        AppCompatButton btnCancel = mDialog.findViewById(R.id.btnCancel);
+        AppCompatButton btnSubmit = mDialog.findViewById(R.id.btnSubmit);
+
+        CheckBox checkOutOfStock = mDialog.findViewById(R.id.checkOutOfStock);
+        CheckBox checkAnother = mDialog.findViewById(R.id.checkAnother);
+
+
+        btnCancel.setOnClickListener(v -> {
+            mDialog.dismiss();
+
+        });
+
+
+        checkOutOfStock.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // If the first CheckBox is checked, uncheck the second
+                if (isChecked) {
+                    checkOutOfStock.setChecked(true);  // Uncheck the other checkbox
+                    checkAnother.setChecked(false);  // Uncheck the other checkbox
+                    reason = getString(R.string.product_is_out_of_stock);
+                }
+            }
+        });
+
+        checkAnother.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // If the second CheckBox is checked, uncheck the first
+                if (isChecked) {
+                    checkOutOfStock.setChecked(false);  // Uncheck the other checkbox
+                    checkAnother.setChecked(true);  // Uncheck the other checkbox
+                    reason = "enter reason";
+
+                }
+            }
+        });
+
+
+        btnSubmit.setOnClickListener(v -> {
+            //  mDialog.dismiss();
+            // callCompleteSelfCollect(edReason.getText().toString());
+            //  callAcceptDeclineOrder(orderStatus,type,orderId,edReason.getText().toString());
+            if (reason.equals("")) {
+                Toast.makeText(requireActivity(), getString(R.string.select_reason), Toast.LENGTH_LONG).show();
+            } else if (!reason.equals("enter reason")) {
+                mDialog.dismiss();
+                callAcceptDeclineOrder(orderStatus, type, id, userId,reason);
+            } else {
+                mDialog.dismiss();
+                dialogCancelOrderReason(orderStatus, "All", id,userId);
+            }
+
+
+        });
+        mDialog.show();
     }
 
 

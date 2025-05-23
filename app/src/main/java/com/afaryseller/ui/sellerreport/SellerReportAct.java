@@ -143,13 +143,16 @@ public class SellerReportAct extends BaseActivity<ActivitySellerReportBinding, R
                                          int n4=0;
                                          for (int j=0;j<model.getResult().get(i).getOrderDetails().size();j++){
                                              int n1=0;
+                                             String deliveryCharge = "0";
+                                              deliveryCharge = model.getResult().get(i).getOrderDetails().get(j).getDeliveryCharges();
+                                              if (deliveryCharge.equals("")) deliveryCharge = "0" ;
                                              if (model.getResult().get(i).getOrderDetails().get(j).getTotalAmount().contains(",")) n1 = parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTotalAmount().replace(",",""));
                                              else n1 = parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTotalAmount());
 
                                              int n2 = parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTaxN1())
                                                      + parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getTaxN2())
                                                      + parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getPlatFormsFees())
-                                                     + parseFrenchNumber(model.getResult().get(i).getOrderDetails().get(j).getDeliveryCharges());
+                                                     + parseFrenchNumber(deliveryCharge);
                                              int n3 = n1 - n2;
 
                                               n3 = n3+ n4;
