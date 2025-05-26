@@ -49,7 +49,7 @@ import retrofit2.http.Part;
 public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, OrderDetailsViewModel> implements OrderItemListener {
     ActivityOrderDetailsBinding binding;
     OrderDetailsViewModel orderDetailsViewModel;
-    String orderId = "", orderStatus = "", token = "", type = "";
+    String orderId = "", orderStatus = "", token = "", type = "",selectCheck="";
     OrderDetailsModel model;
     //  double totalPriceToToPay=0.0,taxN1=0.0,taxN2=0.0,platFormsFees=0.0,deliveryFees=0.0,subTotal=0.0;
     String totalPriceToToPay = "0", taxN1 = "0", taxN2 = "0", platFormsFees = "0", deliveryFees = "0", subTotal = "0", reason = "";
@@ -378,7 +378,8 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
                                 //  Glide.with(OrderDetailsAct.this).load(model.getResult().getProductList().get(0).getProductImages()).into(binding.productImg);
                                 binding.tvShopName.setText(model.getResult().getProductList().get(0).getShopName());
                                 binding.tvOrderNumber.setText(orderId + "");
-                                binding.tvDate.setText(model.getResult().getProductList().get(0).getDateTime());
+                              //  binding.tvDate.setText(model.getResult().getProductList().get(0).getDateTime());
+                                binding.tvDate.setText(model.getResult().getLocal_date_time());
 
 
                                 if (model.getResult().getProductList().size() == 1) {
@@ -1001,7 +1002,8 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
                 if (isChecked) {
                     checkOutOfStock.setChecked(true);  // Uncheck the other checkbox
                     checkAnother.setChecked(false);  // Uncheck the other checkbox
-                    reason = getString(R.string.product_is_out_of_stock);
+                    reason = "";   //getString(R.string.product_is_out_of_stock);
+                    selectCheck ="out of stock";
                 }
             }
         });
@@ -1014,7 +1016,7 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
                     checkOutOfStock.setChecked(false);  // Uncheck the other checkbox
                     checkAnother.setChecked(true);  // Uncheck the other checkbox
                     reason = "enter reason";
-
+                    selectCheck ="in stock";
                 }
             }
         });
@@ -1024,6 +1026,29 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
           //  mDialog.dismiss();
             // callCompleteSelfCollect(edReason.getText().toString());
             //  callAcceptDeclineOrder(orderStatus,type,orderId,edReason.getText().toString());
+
+            if(selectCheck.equals(""))     {
+                Toast.makeText(OrderDetailsAct.this, getString(R.string.please_select_atleast_one), Toast.LENGTH_LONG).show();
+
+            }
+            else if(selectCheck.equals("in stock")){
+                if (reason.equals("")) {
+                    Toast.makeText(OrderDetailsAct.this, getString(R.string.select_reason), Toast.LENGTH_LONG).show();
+                } else {
+                    mDialog.dismiss();
+                   // dialogCancelOrderReason(orderStatus, "All", id,userId);
+                    dialogCancelOrderReason(orderStatus, "All", orderId);
+
+                }
+            }
+            else {
+                mDialog.dismiss();
+               // callAcceptDeclineOrder(orderStatus, type, id, userId,reason);
+                callAcceptDeclineOrder(orderStatus, type, id, reason);
+
+            }
+
+/*
             if (reason.equals("")) {
                 Toast.makeText(OrderDetailsAct.this, getString(R.string.select_reason), Toast.LENGTH_LONG).show();
             } else if (!reason.equals("enter reason")) {
@@ -1033,6 +1058,7 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
                 mDialog.dismiss();
                 dialogCancelOrderReason(orderStatus, "All", orderId);
             }
+*/
 
 
         });

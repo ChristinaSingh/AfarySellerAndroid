@@ -1022,6 +1022,21 @@ public class OrderDetailsModel implements Serializable {
         @Expose
         private String deliveryType;
 
+
+        @SerializedName("local_date_time")
+        @Expose
+        private String local_date_time;
+
+        public String getLocal_date_time() {
+            return local_date_time;
+        }
+
+        public void setLocal_date_time(String local_date_time) {
+            this.local_date_time = local_date_time;
+        }
+
+
+
         public String getDeliveryType() {
             return deliveryType;
         }
@@ -1115,6 +1130,10 @@ public class OrderDetailsModel implements Serializable {
             @SerializedName("status")
             @Expose
             private String status;
+
+
+
+
 
 
             public String getId() {
@@ -1311,6 +1330,8 @@ public class OrderDetailsModel implements Serializable {
             @SerializedName("currency")
             @Expose
             private String currency;
+
+
 
 
             @SerializedName("return_to_seller_status")

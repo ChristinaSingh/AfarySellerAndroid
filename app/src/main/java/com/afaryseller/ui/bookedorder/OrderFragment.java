@@ -39,7 +39,7 @@ import java.util.Map;
 public class OrderFragment extends BaseFragment<OrderFragmentBinding, OrderViewModel> implements OrderListener {
     OrderFragmentBinding binding;
     OrderViewModel orderViewModel;
-    String catId = "",reason = "";
+    String catId = "",reason = "",selectCheck="";
     OrderAdapter adapter;
     ArrayList<OrderModel.Result> arrayList;
 
@@ -237,7 +237,8 @@ public class OrderFragment extends BaseFragment<OrderFragmentBinding, OrderViewM
                 if (isChecked) {
                     checkOutOfStock.setChecked(true);  // Uncheck the other checkbox
                     checkAnother.setChecked(false);  // Uncheck the other checkbox
-                    reason = getString(R.string.product_is_out_of_stock);
+                    reason = "";//getString(R.string.product_is_out_of_stock);
+                    selectCheck ="out of stock";
                 }
             }
         });
@@ -250,7 +251,7 @@ public class OrderFragment extends BaseFragment<OrderFragmentBinding, OrderViewM
                     checkOutOfStock.setChecked(false);  // Uncheck the other checkbox
                     checkAnother.setChecked(true);  // Uncheck the other checkbox
                     reason = "enter reason";
-
+                    selectCheck ="in stock";
                 }
             }
         });
@@ -260,6 +261,26 @@ public class OrderFragment extends BaseFragment<OrderFragmentBinding, OrderViewM
             //  mDialog.dismiss();
             // callCompleteSelfCollect(edReason.getText().toString());
             //  callAcceptDeclineOrder(orderStatus,type,orderId,edReason.getText().toString());
+
+            if(selectCheck.equals(""))     {
+                Toast.makeText(requireActivity(), getString(R.string.please_select_atleast_one), Toast.LENGTH_LONG).show();
+
+            }
+            else if(selectCheck.equals("in stock")){
+               if (reason.equals("")) {
+                   Toast.makeText(requireActivity(), getString(R.string.select_reason), Toast.LENGTH_LONG).show();
+               } else {
+                   mDialog.dismiss();
+                   dialogCancelOrderReason(orderStatus, "All", id,userId);
+               }
+           }
+           else {
+               mDialog.dismiss();
+               callAcceptDeclineOrder(orderStatus, type, id, userId,reason);
+           }
+
+
+/*
             if (reason.equals("")) {
                 Toast.makeText(requireActivity(), getString(R.string.select_reason), Toast.LENGTH_LONG).show();
             } else if (!reason.equals("enter reason")) {
@@ -269,6 +290,7 @@ public class OrderFragment extends BaseFragment<OrderFragmentBinding, OrderViewM
                 mDialog.dismiss();
                 dialogCancelOrderReason(orderStatus, "All", id,userId);
             }
+*/
 
 
         });
