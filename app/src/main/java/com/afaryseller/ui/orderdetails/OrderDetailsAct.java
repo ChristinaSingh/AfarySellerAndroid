@@ -1037,7 +1037,7 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
                 } else {
                     mDialog.dismiss();
                    // dialogCancelOrderReason(orderStatus, "All", id,userId);
-                    dialogCancelOrderReason(orderStatus, "All", orderId);
+                    dialogCancelOrderReason(orderStatus, type, orderId);
 
                 }
             }
