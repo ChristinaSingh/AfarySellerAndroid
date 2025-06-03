@@ -988,7 +988,6 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
         CheckBox checkOutOfStock = mDialog.findViewById(R.id.checkOutOfStock);
         CheckBox checkAnother = mDialog.findViewById(R.id.checkAnother);
 
-
         btnCancel.setOnClickListener(v -> {
             mDialog.dismiss();
 
