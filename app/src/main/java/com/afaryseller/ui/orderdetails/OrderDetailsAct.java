@@ -1007,6 +1007,7 @@ public class OrderDetailsAct extends BaseActivity<ActivityOrderDetailsBinding, O
             }
         });
 
+
         checkAnother.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
