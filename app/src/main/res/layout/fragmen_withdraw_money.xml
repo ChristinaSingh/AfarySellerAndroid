@@ -59,7 +59,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:hint="@string/insert_id_here"
-                    android:imeOptions="actionNext"
+                    android:imeOptions="actionDone"
                     android:inputType="text"
                     android:maxLength="50"
                     android:padding="@dimen/_10sdp"

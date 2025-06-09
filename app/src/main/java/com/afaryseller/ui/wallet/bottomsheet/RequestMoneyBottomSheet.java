@@ -8,9 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -25,6 +27,7 @@ import com.afaryseller.retrofit.ApiClient;
 import com.afaryseller.ui.splash.AskListener;
 import com.afaryseller.ui.splash.SplashAct;
 import com.afaryseller.utility.DataManager;
+import com.afaryseller.utility.NetworkAvailablity;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 
@@ -73,6 +76,39 @@ public class RequestMoneyBottomSheet extends BottomSheetDialogFragment {
         etReason = contentView.findViewById(R.id.etReason);
 
         ccp = contentView.findViewById(R.id.ccp);
+
+
+
+        et_money.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    // Close the current activity
+                    code = ccp.getSelectedCountryCode();
+                    Log.e("code>>>", code);
+                    if(mobile_no_et.getText().toString().equals(""))
+                        Toast.makeText(getActivity(),getString(R.string.enter_email_number),Toast.LENGTH_LONG).show();
+                    else if (et_money.getText().toString().equals("")) {
+                        Toast.makeText(getActivity(),getString(R.string.enter_amount),Toast.LENGTH_LONG).show();
+
+                    }
+                    else {
+
+
+                        if(NetworkAvailablity.checkNetworkStatus(requireActivity()))   sendRequestTransferMoney(code, mobile_no_et.getText().toString()
+                                , et_money.getText().toString(), etReason.getText().toString());
+                        else Toast.makeText(requireActivity(), getString(R.string.network_failure), Toast.LENGTH_SHORT).show();
+
+
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
+
 
         payment_done.setOnClickListener(v -> {
             code = ccp.getSelectedCountryCode();

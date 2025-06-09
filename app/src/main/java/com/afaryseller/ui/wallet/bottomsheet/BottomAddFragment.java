@@ -4,10 +4,13 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afaryseller.R;
@@ -50,6 +53,24 @@ public class BottomAddFragment extends BottomSheetDialogFragment implements AskL
         done_text = contentView.findViewById(R.id.done_text);
         money_et = contentView.findViewById(R.id.money_et);
 
+
+        money_et.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    // Close the current activity
+                    if(money_et.getText().toString().equalsIgnoreCase(""))
+                        Toast.makeText(context, getString(R.string.please_enter_amount), Toast.LENGTH_SHORT).show();
+                    else {
+                        chkNew();
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
         done_text.setOnClickListener(v -> {
            // AddWalletAPI(money_et.getText().toString());
             if(money_et.getText().toString().equalsIgnoreCase(""))
@@ -63,6 +84,12 @@ public class BottomAddFragment extends BottomSheetDialogFragment implements AskL
 
         dialog.setContentView(contentView);
         ((View) contentView.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+    }
+
+
+    public void chkNew(){
+        new PaymentBottomSheet(money_et.getText().toString()).callBack(this::ask).show(getActivity().getSupportFragmentManager(), "ModalBottomSheet");
+
     }
 
 /*

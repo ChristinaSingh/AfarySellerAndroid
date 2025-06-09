@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ import com.afaryseller.retrofit.ApiClient;
 import com.afaryseller.ui.splash.AskListener;
 import com.afaryseller.ui.wallet.bottomsheet.WithdrawDetailBottomSheet;
 import com.afaryseller.utility.DataManager;
+import com.afaryseller.utility.NetworkAvailablity;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
@@ -74,6 +77,25 @@ public class WithDrawFragment extends BottomSheetDialogFragment implements AskLi
         tvNote  = contentView.findViewById(R.id.tvNote);
         tvNote.setText(Html.fromHtml("<font color='#000'>"  + "<b>"  + "Note:" + "</b>" + "</font>"+ "<font color='#01709B'>" +
                 "Go and Click on the transaction that interests you in the list of transactions then copy its ID and paste it here"+"</font>"));
+
+
+
+        withdrawal_money.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    // Close the current activity
+                    if(!withdrawal_money.getText().toString().equalsIgnoreCase("")) {
+                        if(NetworkAvailablity.checkNetworkStatus(requireActivity()))WithDrawalAPI();
+                        else Toast.makeText(requireActivity(), getString(R.string.network_failure), Toast.LENGTH_SHORT).show();
+                    }
+                    else Toast.makeText(context, getString(R.string.please_enter_transaction_id), Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
 
 

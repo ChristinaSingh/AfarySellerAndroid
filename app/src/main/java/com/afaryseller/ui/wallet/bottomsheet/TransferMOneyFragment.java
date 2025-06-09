@@ -8,9 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -29,6 +31,7 @@ import com.afaryseller.ui.wallet.GetProfileModal;
 import com.afaryseller.ui.wallet.PaymentByAnotherAct;
 import com.afaryseller.ui.wallet.PaymentWebViewAct;
 import com.afaryseller.utility.DataManager;
+import com.afaryseller.utility.NetworkAvailablity;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.gson.Gson;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
@@ -81,6 +84,38 @@ public class TransferMOneyFragment extends BottomSheetDialogFragment {
         payment_done = contentView.findViewById(R.id.payment_done);
         et_money = contentView.findViewById(R.id.et_money);
         ccp = contentView.findViewById(R.id.ccp);
+
+
+
+        et_money.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    // Close the current activity
+                    code = ccp.getSelectedCountryCode();
+                    Log.e("code>>>", code);
+                    if(mobile_no_et.getText().toString().equals(""))
+                        Toast.makeText(getActivity(),getString(R.string.enter_email_number),Toast.LENGTH_LONG).show();
+                    else if (et_money.getText().toString().equals("")) {
+                        Toast.makeText(getActivity(),getString(R.string.enter_amount),Toast.LENGTH_LONG).show();
+
+                    }
+                    else {
+
+
+
+                        if(NetworkAvailablity.checkNetworkStatus(requireActivity())) TransferMoneyAPI(code, mobile_no_et.getText().toString()
+                                , et_money.getText().toString());
+                        else Toast.makeText(getActivity(), getString(R.string.network_failure), Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
+
 
         payment_done.setOnClickListener(v -> {
             code = ccp.getSelectedCountryCode();
