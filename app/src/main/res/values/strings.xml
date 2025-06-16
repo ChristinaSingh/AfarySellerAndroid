@@ -381,7 +381,7 @@
     <string name="please_indicate_the_airtel_money_number_by_which_you_wish_to_debit_the_payment">Please indicate the Airtel money number by which you wish to debit the payment</string>
     <string name="transfer_money_request">Transfer Money Request</string>
     <string name="enter_here">Enter here</string>
-    <string name="your_request_has_been_sent_to_your_correspondent">Your request has been sent to your correspondent.</string>
+    <string name="your_request_has_been_sent_to_your_correspondent">Your request has been sent to your correspondent. Please wait a few moments; you will receive a confirmation notification when he have accepted</string>
     <string name="discription_muust_">Description must be at least 5000 characters.</string>
     <string name="total_price_to_pay">Total Price to Pay</string>
     <string name="invoice_share_by">Invoice Share by</string>
@@ -472,5 +472,10 @@
     <string name="please_enter_amount">Please enter amount</string>
     <string name="please_enter_transaction_id">Please enter transaction id</string>
 
-
+    <string name="payment_req">Payment Request</string>
+    <string name="payment_sucessful">Payment sucessful</string>
+    <string name="data_not_available">data not available</string>
+    <string name="payment_request">Payment Request</string>
+    <string name="pay_now_from_wallet">Pay Now From Wallet</string>
+    <string name="enter_reason">enter reason...</string>
 </resources>

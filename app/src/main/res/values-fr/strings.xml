@@ -396,7 +396,7 @@
     <string name="please_indicate_the_airtel_money_number_by_which_you_wish_to_debit_the_payment">Veuillez indiquer le numéro Airtel money par lequel vous souhaitez débiter le paiement</string>
     <string name="transfer_money_request">Demande de transfert d\'argent</string>
     <string name="enter_here">Entrez ici</string>
-    <string name="your_request_has_been_sent_to_your_correspondent">Votre demande a été envoyée à votre correspondant.</string>
+    <string name="your_request_has_been_sent_to_your_correspondent">Votre demande a été transmise à votre correspondant. Veuillez patienter quelques instants ; vous recevrez une notification de confirmation dès son acceptation.</string>
     <string name="discription_muust_">La description doit comporter au moins 5 000 caractères</string>
     <string name="total_price_to_pay">Prix total à payer</string>
     <string name="invoice_share_by">Partage de facture par</string>

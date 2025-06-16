@@ -290,6 +290,12 @@
             />
 
 
+        <activity android:name=".ui.requestlist.PaymentReqListAct"
+            android:exported="false"
+            android:configChanges="locale"
+            />
+
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.afaryseller.fileprovider"

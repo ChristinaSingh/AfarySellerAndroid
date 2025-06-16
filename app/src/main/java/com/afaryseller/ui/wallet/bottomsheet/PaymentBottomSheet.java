@@ -167,6 +167,12 @@ public class PaymentBottomSheet extends BottomSheetDialogFragment {
         });
 
 
+        binding.RRtoolbar.setOnClickListener(v -> {
+           dialog.dismiss();
+        });
+
+
+
 
 
         GetProfile();

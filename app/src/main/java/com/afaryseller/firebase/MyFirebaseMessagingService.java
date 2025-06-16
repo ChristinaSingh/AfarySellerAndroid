@@ -384,7 +384,43 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 } /*else if (msg.contains("You have been logged out because you have logged in on another device")) {
                 SessionManager.clearSession(getApplicationContext());
                 intent = new Intent(getApplicationContext(), SplashAct.class);
-            }*/ else if (type.equalsIgnoreCase("Statuschange")) {
+            }*/
+
+
+
+                else if (keyEng.equals("Money Request")) {
+                    //  if (!remoteMessage.getString("other_user_id").equals(PreferenceConnector.readString(getApplicationContext(), PreferenceConnector.User_id, ""))) {
+
+                    if (type.equals("fromuser")) {
+                        intent = new Intent(getApplicationContext(), HomeAct.class)
+                                /*  .putExtra("status", "")
+                                  .putExtra("msg", "");*/
+                                .putExtra("status", "openPaymentDialog")
+                                .putExtra("msg", msg);
+
+                    }
+
+                    else {
+                        intent = new Intent(getApplicationContext(), HomeAct.class)
+                                .putExtra("status", remoteMessage.getString("key"))
+                                .putExtra("msg", remoteMessage.getString("message"))
+                                .putExtra("user_id", remoteMessage.getString("userid"))
+                                .putExtra("request_id", remoteMessage.getInt("request_id") + "")
+                                .putExtra("request_amount", remoteMessage.getString("request_amonut"))
+                                .putExtra("to_userid", remoteMessage.getString("to_userid"));
+
+                    }
+                    //  }
+                    //  else {
+
+                    //  }
+
+                }
+
+
+
+
+                else if (type.equalsIgnoreCase("Statuschange")) {
                     intent = new Intent(getApplicationContext(), SplashAct.class)
                             .putExtra("title", title)
                             .putExtra("msg", msg)

@@ -563,8 +563,37 @@
                 </RelativeLayout>
 
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@color/white"
+                        android:elevation="@dimen/_5sdp">
 
-                <RelativeLayout
+
+                        <TextView
+                            android:id="@+id/tvMyRequest"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:drawableRight="@drawable/back_right"
+                            android:fontFamily="@font/poppinsregular"
+                            android:maxLength="30"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text="@string/my_requests"
+                            android:textColor="@color/natural_gray"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+                    </RelativeLayout>
+
+
+
+
+                    <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
                     android:layout_marginLeft="@dimen/_10sdp"
@@ -1139,6 +1168,10 @@
                         android:textStyle="normal" />
 
                 </RelativeLayout>
+
+
+
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"

@@ -119,6 +119,14 @@ public class HomeAct extends AppCompatActivity {
                   updateProductStockDialog(HomeAct.this,msg,getIntent().getStringExtra("product_id"),getIntent().getStringExtra("user_id"),
                           getIntent().getStringExtra("product_name"),getIntent().getStringExtra("product_sku"),getIntent().getStringExtra("product_image"));
               }
+
+              else if(status.equals("Money Request")){
+                  Log.e("order complete HomeScreen Inner===","========"+status);
+                  PaymentReqAcceptCancelDialog(HomeAct.this,getIntent().getStringExtra("msg")
+                          ,getIntent().getStringExtra("request_id"),getIntent().getStringExtra("user_id"),getIntent().getStringExtra("to_userid"),
+                          getIntent().getStringExtra("request_amount") );
+              }
+
           }
         }
 
@@ -331,5 +339,178 @@ public class HomeAct extends AppCompatActivity {
         resources.updateConfiguration(configuration, resources.getDisplayMetrics());
 
     }*/
+
+
+    public void PaymentReqAcceptCancelDialog(Context context,String msg,String reqId,String userId,String toUserID,String amount) {
+        // Dialog dialog = new Dialog(context, R.style.FullScreenDialog);
+
+        Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_payment_req_accept_cancel);
+        dialog.setCanceledOnTouchOutside(true);
+
+        TextView tv = dialog.findViewById(R.id.tvMsg);
+        RelativeLayout btnAccept = dialog.findViewById(R.id.btnAccept);
+        RelativeLayout btnCancel = dialog.findViewById(R.id.btnCancel);
+
+        tv.setText(msg);
+        btnAccept.setOnClickListener(view -> {
+            paymentReqAcceptCancel(userId,"Accepted",reqId,toUserID,amount);
+
+            dialog.dismiss();
+
+        });
+
+        btnCancel.setOnClickListener(view -> {
+            paymentReqAcceptCancel(userId,"Cancelled",reqId,toUserID,amount);
+            dialog.dismiss();
+
+        });
+
+
+
+
+
+        WindowManager.LayoutParams layoutParams = dialog.getWindow().getAttributes();
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setAttributes(layoutParams);
+        dialog.show();
+    }
+
+    private void paymentReqAcceptCancel(String userId, String status, String requestId, String toUserId, String amount) {
+        DataManager.getInstance().showProgressMessage(this, getString(R.string.please_wait));
+
+        Map<String, String> map = new HashMap<>();
+        map.put("status",status);
+        map.put("request_id",requestId);
+
+        Log.e("MapMap", "" + map);
+
+        Call<ResponseBody> loginCall = apiInterface.paymentReqAcceptCancelApi(map);
+
+        loginCall.enqueue(new Callback<ResponseBody>() {
+
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                DataManager.getInstance().hideProgressMessage();
+
+                try {
+                    String responseData = response.body() != null ? response.body().string() : "";
+                    JSONObject object = new JSONObject(responseData);
+                    Log.e("MapMap", "Payment Request RESPONSE" + object);
+                    if (object.getString("status").equals("1")) {
+                        if (status.equals("Accepted")) paymentDialog(userId, status, requestId, toUserId, amount);
+
+                    } else if (object.getString("status").equals("0")) {
+                        Toast.makeText(HomeAct.this, object.getString("message")/*getString(R.string.wrong_username_password)*/, Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                call.cancel();
+                DataManager.getInstance().hideProgressMessage();
+            }
+        });
+    }
+
+    private void paymentDialog(String userId, String status, String requestId, String toUserId, String amount) {
+
+        Dialog dialog = new Dialog(HomeAct.this);
+        dialog.setContentView(R.layout.dialog_payment_req);
+        dialog.setCanceledOnTouchOutside(true);
+
+        TextView tv = dialog.findViewById(R.id.tvMsg);
+        TextView tvTotalAmt = dialog.findViewById(R.id.tvTotalAmt);
+
+        tvTotalAmt.setText("FCFA"+amount);
+
+
+        RelativeLayout btnPayNow = dialog.findViewById(R.id.btnPayNow);
+
+        tv.setText(msg);
+        btnPayNow.setOnClickListener(view -> {
+            paymentReq(userId,requestId,toUserId,amount);
+            dialog.dismiss();
+
+        });
+
+
+
+
+
+
+
+
+        WindowManager.LayoutParams layoutParams = dialog.getWindow().getAttributes();
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setAttributes(layoutParams);
+        dialog.show();
+
+    }
+
+    private void paymentReq(String userId, String requestId, String toUserId, String amount) {
+        DataManager.getInstance().showProgressMessage(this, getString(R.string.please_wait));
+
+        Map<String, String> map = new HashMap<>();
+        map.put("user_id", toUserId);
+        map.put("payment_request_user_id", userId);
+        map.put("amount", amount);
+        map.put("datetime", DataManager.getCurrent());
+        map.put("total_amount", amount);
+        map.put("admin_fees", "0");
+        map.put("payment_request_id",requestId);
+        map.put("register_id", DataManager.getInstance().getUserData(HomeAct.this).getResult().getRegisterId());
+
+        Log.e("MapMap", "TransferMoney First REQUEST" + map);
+
+
+        Log.e("MapMap", "" + map);
+
+        Call<ResponseBody> loginCall = apiInterface.paymentReqPayApi(map);
+
+        loginCall.enqueue(new Callback<ResponseBody>() {
+
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                DataManager.getInstance().hideProgressMessage();
+
+                try {
+                    String responseData = response.body() != null ? response.body().string() : "";
+                    JSONObject object = new JSONObject(responseData);
+                    Log.e("MapMap", "Payment Request Pay RESPONSE" + object);
+                    if (object.getString("status").equals("1")) {
+                        Toast.makeText(HomeAct.this, getString(R.string.payment_sucessful), Toast.LENGTH_SHORT).show();
+                    } else if (object.getString("status").equals("0")) {
+                        Toast.makeText(HomeAct.this, object.getString("message")/*getString(R.string.wrong_username_password)*/, Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                call.cancel();
+                DataManager.getInstance().hideProgressMessage();
+            }
+        });
+    }
+
+
 
 }

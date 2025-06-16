@@ -812,4 +812,21 @@ public interface AfarySeller {
     Call<ResponseBody> getSellerPeriodicReportNewResponseApi(@HeaderMap Map<String, String> auth, @FieldMap Map<String, String> params);
 
 
+    @FormUrlEncoded
+    @POST("update_payment_request_status")
+    Call<ResponseBody> paymentReqAcceptCancelApi(@FieldMap Map<String, String> params);
+
+
+    @FormUrlEncoded
+    @POST("get_payment_request")
+    Call<ResponseBody> paymentReqApi(@FieldMap Map<String, String> params);
+
+
+    @FormUrlEncoded
+    @POST("yes_transfer_money_wllet_to_wallet_payment_request")
+    Call<ResponseBody> paymentReqPayApi(@FieldMap Map<String, String> params);
+
+
+
+
 }

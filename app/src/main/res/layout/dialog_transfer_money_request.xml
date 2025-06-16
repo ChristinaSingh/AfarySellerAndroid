@@ -56,6 +56,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text=""
+                    android:visibility="gone"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 
@@ -63,34 +64,80 @@
 
 
                 <LinearLayout
-                    android:id="@+id/btnOk"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_20sdp"
-                    android:gravity="center_horizontal"
-                    android:layout_gravity="center"
                     android:orientation="horizontal"
-                    android:background="@drawable/login_border_btn"
-                    android:padding="@dimen/_5sdp">
+                    android:weightSum="1"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:gravity="center">
 
 
-
-
-
-
-                    <TextView
-                        android:id="@+id/txtok"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:id="@+id/btnBack"
+                        android:layout_width="@dimen/_50sdp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/ok"
-                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:background="@drawable/login_border_btn"
+                        android:padding="@dimen/_5sdp">
 
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_12sdp">
 
-                    </TextView>
+
+
+
+
+                        <TextView
+                            android:id="@+id/txtBack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/back"
+                            android:fontFamily="@font/poppins_bold"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_weight=".1"/>
+
+                    <LinearLayout
+                        android:id="@+id/btnOk"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:background="@drawable/login_border_btn"
+                        android:padding="@dimen/_5sdp">
+
+
+
+
+
+
+                        <TextView
+                            android:id="@+id/txtok"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/ok"
+                            android:fontFamily="@font/poppins_bold"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp">
+
+                        </TextView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

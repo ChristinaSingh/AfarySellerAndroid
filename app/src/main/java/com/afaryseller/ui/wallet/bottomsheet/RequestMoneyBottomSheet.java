@@ -92,6 +92,12 @@ public class RequestMoneyBottomSheet extends BottomSheetDialogFragment {
                         Toast.makeText(getActivity(),getString(R.string.enter_amount),Toast.LENGTH_LONG).show();
 
                     }
+
+                    else if (etReason.getText().toString().equals("")) {
+                        Toast.makeText(getActivity(),getString(R.string.enter_reason),Toast.LENGTH_LONG).show();
+
+                    }
+
                     else {
 
 
@@ -119,6 +125,12 @@ public class RequestMoneyBottomSheet extends BottomSheetDialogFragment {
                 Toast.makeText(getActivity(),getString(R.string.enter_amount),Toast.LENGTH_LONG).show();
 
             }
+
+            else if (etReason.getText().toString().equals("")) {
+                Toast.makeText(getActivity(),getString(R.string.enter_reason),Toast.LENGTH_LONG).show();
+
+            }
+
             else {
                 sendRequestTransferMoney(code, mobile_no_et.getText().toString()
                         , et_money.getText().toString(), etReason.getText().toString());
@@ -197,6 +209,9 @@ public class RequestMoneyBottomSheet extends BottomSheetDialogFragment {
         TextView tvAmount = mDialog.findViewById(R.id.tvAmount);
 
         LinearLayout btnOk = mDialog.findViewById(R.id.btnOk);
+        LinearLayout btnBack = mDialog.findViewById(R.id.btnBack);
+
+
         tvAmount.setText(Html.fromHtml("<font color='#000'>" + "you received an amount of "+ "<b>"+ "FCFA" + Amount + "</b>" +  " From " + senderName + "</font>"  ));
 
         btnOk.setOnClickListener(v -> {
@@ -205,6 +220,11 @@ public class RequestMoneyBottomSheet extends BottomSheetDialogFragment {
 
 
         });
+
+        btnBack.setOnClickListener(v -> mDialog.dismiss());
+
+
+
         mDialog.show();
 
     }
