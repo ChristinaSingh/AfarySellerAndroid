@@ -189,7 +189,6 @@ public class WalletFragment extends Fragment implements AskListener {
         });
     }
 
-
     private void setAdapter() {
 
         mAdapter = new WalletAdapter(getActivity(), get_result);
