@@ -181,6 +181,7 @@ public class WalletFragment extends Fragment implements AskListener {
                 }
             }
 
+
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 call.cancel();
