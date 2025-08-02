@@ -3,6 +3,7 @@ package com.afaryseller.retrofit;
 public class ApiConstant {
 
 
+
     public final static String SIGNUP = "signup_seller";
 
     public final static String SUB_SELLER_SIGNUP = "add_sub_seller";
